@@ -1,0 +1,998 @@
+time: 2017-10-02 01:33:19.879543Z
+tags: worker-1
+test: tempest.api.compute.security_groups.test_security_group_rules.SecurityGroupRulesTestJSON.test_security_group_rules_create[id-850795d7-d4d3-4e55-b527-a774c0123d3a,smoke]
+time: 2017-10-02 01:33:20.849670Z
+successful: tempest.api.compute.security_groups.test_security_group_rules.SecurityGroupRulesTestJSON.test_security_group_rules_create[id-850795d7-d4d3-4e55-b527-a774c0123d3a,smoke] [ multipart
+Content-Type: text/plain;charset=utf8
+pythonlogging:''
+A2C
+2017-10-02 09:33:20,736 15182 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupRulesTestJSON:test_security_group_rules_create): 200 POST http://10.0.2.201:8774/v2.1/e7b037dfedc141dd9395e7c505841aec/os-security-groups 0.855s
+2017-10-02 09:33:20,736 15182 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"security_group": {"name": "tempest-SecurityGroupRulesTestJSON-securitygroup-1669032211", "description": "tempest-description-320198656"}}
+    Response - Headers: {'status': '200', u'content-length': '247', 'content-location': 'http://10.0.2.201:8774/v2.1/e7b037dfedc141dd9395e7c505841aec/os-security-groups', u'x-compute-request-id': 'req-be62661d-ac25-414f-bafc-c16b6711b9ad', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:19 GMT', u'content-type': 'application/json'}
+        Body: {"security_group": {"rules": [], "tenant_id": "e7b037dfedc141dd9395e7c505841aec", "id": "6a53f4f8-1bb6-4d31-a4b3-4eee8187283c", "name": "tempest-SecurityGroupRulesTestJSON-securitygroup-1669032211", "description": "tempest-description-320198656"}}
+2017-10-02 09:33:20,844 15182 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupRulesTestJSON:test_security_group_rules_create): 200 POST http://10.0.2.201:8774/v2.1/e7b037dfedc141dd9395e7c505841aec/os-security-group-rules 0.100s
+2017-10-02 09:33:20,845 15182 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"security_group_rule": {"to_port": 22, "parent_group_id": "6a53f4f8-1bb6-4d31-a4b3-4eee8187283c", "ip_protocol": "tcp", "from_port": 22}}
+    Response - Headers: {'status': '200', u'content-length': '232', 'content-location': 'http://10.0.2.201:8774/v2.1/e7b037dfedc141dd9395e7c505841aec/os-security-group-rules', u'x-compute-request-id': 'req-b6201e56-31b0-4ae2-acd4-4075a5b4bd56', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:19 GMT', u'content-type': 'application/json'}
+        Body: {"security_group_rule": {"from_port": 22, "group": {}, "ip_protocol": "tcp", "to_port": 22, "parent_group_id": "6a53f4f8-1bb6-4d31-a4b3-4eee8187283c", "ip_range": {"cidr": "0.0.0.0/0"}, "id": "2b959acd-2356-44a5-859e-3a2b9e313167"}}
+0
+]
+tags: -worker-1
+time: 2017-10-02 01:33:20.291327Z
+tags: worker-3
+test: tempest.api.compute.security_groups.test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_delete_nonexistent_security_group[id-6727c00b-214c-4f9e-9a52-017ac3e98411,negative]
+time: 2017-10-02 01:33:21.004003Z
+failure: tempest.api.compute.security_groups.test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_delete_nonexistent_security_group[id-6727c00b-214c-4f9e-9a52-017ac3e98411,negative] [ multipart
+Content-Type: text/plain;charset=utf8
+pythonlogging:''
+417
+2017-10-02 09:33:20,998 15186 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsNegativeTestJSON:test_delete_nonexistent_security_group): 400 DELETE http://10.0.2.201:8774/v2.1/f7e2e99a44e941059f520611ec0b376f/os-security-groups/1910819802 0.705s
+2017-10-02 09:33:20,999 15186 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '400', u'content-length': '76', 'content-location': 'http://10.0.2.201:8774/v2.1/f7e2e99a44e941059f520611ec0b376f/os-security-groups/1910819802', u'x-compute-request-id': 'req-55e3196c-7ea6-4af8-afdb-dd3500f08cd9', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:19 GMT', u'content-type': 'application/json; charset=UTF-8'}
+        Body: {"badRequest": {"message": "Security group id should be uuid", "code": 400}}
+0
+Content-Type: text/x-traceback;charset=utf8,language=python
+traceback
+AEA
+Traceback (most recent call last):
+  File "tempest/api/compute/security_groups/test_security_groups_negative.py", line 116, in test_delete_nonexistent_security_group
+    self.client.delete_security_group, non_exist_id)
+  File "/home/localadmin/.rally/verification/verifier-1e108e63-ede3-4418-99a4-280d59128c53/.venv/local/lib/python2.7/site-packages/testtools/testcase.py", line 485, in assertRaises
+    self.assertThat(our_callable, matcher)
+  File "/home/localadmin/.rally/verification/verifier-1e108e63-ede3-4418-99a4-280d59128c53/.venv/local/lib/python2.7/site-packages/testtools/testcase.py", line 496, in assertThat
+    mismatch_error = self._matchHelper(matchee, matcher, message, verbose)
+  File "/home/localadmin/.rally/verification/verifier-1e108e63-ede3-4418-99a4-280d59128c53/.venv/local/lib/python2.7/site-packages/testtools/testcase.py", line 547, in _matchHelper
+    mismatch = matcher.match(matchee)
+  File "/home/localadmin/.rally/verification/verifier-1e108e63-ede3-4418-99a4-280d59128c53/.venv/local/lib/python2.7/site-packages/testtools/matchers/_exception.py", line 108, in match
+    mismatch = self.exception_matcher.match(exc_info)
+  File "/home/localadmin/.rally/verification/verifier-1e108e63-ede3-4418-99a4-280d59128c53/.venv/local/lib/python2.7/site-packages/testtools/matchers/_higherorder.py", line 62, in match
+    mismatch = matcher.match(matchee)
+  File "/home/localadmin/.rally/verification/verifier-1e108e63-ede3-4418-99a4-280d59128c53/.venv/local/lib/python2.7/site-packages/testtools/testcase.py", line 475, in match
+    reraise(*matchee)
+  File "/home/localadmin/.rally/verification/verifier-1e108e63-ede3-4418-99a4-280d59128c53/.venv/local/lib/python2.7/site-packages/testtools/matchers/_exception.py", line 101, in match
+    result = matchee()
+  File "/home/localadmin/.rally/verification/verifier-1e108e63-ede3-4418-99a4-280d59128c53/.venv/local/lib/python2.7/site-packages/testtools/testcase.py", line 1049, in __call__
+    return self._callable_object(*self._args, **self._kwargs)
+  File "tempest/lib/services/compute/security_groups_client.py", line 93, in delete_security_group
+    'os-security-groups/%s' % security_group_id)
+  File "tempest/lib/common/rest_client.py", line 301, in delete
+    return self.request('DELETE', url, extra_headers, headers, body)
+  File "tempest/lib/services/compute/base_compute_client.py", line 48, in request
+    method, url, extra_headers, headers, body, chunked)
+  File "tempest/lib/common/rest_client.py", line 659, in request
+    self._error_checker(resp, resp_body)
+  File "tempest/lib/common/rest_client.py", line 770, in _error_checker
+    raise exceptions.BadRequest(resp_body, resp=resp)
+tempest.lib.exceptions.BadRequest: Bad request
+Details: {u'message': u'Security group id should be uuid', u'code': 400}
+0
+]
+tags: -worker-3
+time: 2017-10-02 01:33:21.009558Z
+tags: worker-3
+test: tempest.api.compute.security_groups.test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_delete_security_group_without_passing_id[id-1438f330-8fa4-4aeb-8a94-37c250106d7f,negative]
+time: 2017-10-02 01:33:21.028996Z
+successful: tempest.api.compute.security_groups.test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_delete_security_group_without_passing_id[id-1438f330-8fa4-4aeb-8a94-37c250106d7f,negative] [ multipart
+Content-Type: text/plain;charset=utf8
+pythonlogging:''
+39B
+2017-10-02 09:33:21,027 15186 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsNegativeTestJSON:test_delete_security_group_without_passing_id): 404 DELETE http://10.0.2.201:8774/v2.1/f7e2e99a44e941059f520611ec0b376f/os-security-groups/ 0.014s
+2017-10-02 09:33:21,028 15186 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '404', u'content-length': '52', 'content-location': 'http://10.0.2.201:8774/v2.1/f7e2e99a44e941059f520611ec0b376f/os-security-groups/', u'date': 'Mon, 02 Oct 2017 01:33:19 GMT', u'x-compute-request-id': 'req-1ebcba5a-3388-4412-927b-d3dbdfe13a26', u'content-type': 'text/plain; charset=UTF-8', u'connection': 'close'}
+        Body: 404 Not Found
+
+The resource could not be found.
+
+   
+0
+]
+tags: -worker-3
+time: 2017-10-02 01:33:20.850486Z
+tags: worker-1
+test: tempest.api.compute.security_groups.test_security_group_rules.SecurityGroupRulesTestJSON.test_security_group_rules_create_with_optional_cidr[id-7a01873e-3c38-4f30-80be-31a043cfe2fd]
+time: 2017-10-02 01:33:21.076247Z
+successful: tempest.api.compute.security_groups.test_security_group_rules.SecurityGroupRulesTestJSON.test_security_group_rules_create_with_optional_cidr[id-7a01873e-3c38-4f30-80be-31a043cfe2fd] [ multipart
+Content-Type: text/plain;charset=utf8
+pythonlogging:''
+A6F
+2017-10-02 09:33:20,921 15182 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupRulesTestJSON:test_security_group_rules_create_with_optional_cidr): 200 POST http://10.0.2.201:8774/v2.1/e7b037dfedc141dd9395e7c505841aec/os-security-groups 0.070s
+2017-10-02 09:33:20,922 15182 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"security_group": {"name": "tempest-SecurityGroupRulesTestJSON-securitygroup-1274152507", "description": "tempest-description-616820144"}}
+    Response - Headers: {'status': '200', u'content-length': '247', 'content-location': 'http://10.0.2.201:8774/v2.1/e7b037dfedc141dd9395e7c505841aec/os-security-groups', u'x-compute-request-id': 'req-700d78ac-7638-46dc-bbe7-380180b12cee', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:19 GMT', u'content-type': 'application/json'}
+        Body: {"security_group": {"rules": [], "tenant_id": "e7b037dfedc141dd9395e7c505841aec", "id": "5089e939-827a-44b9-8275-2688e7edffcf", "name": "tempest-SecurityGroupRulesTestJSON-securitygroup-1274152507", "description": "tempest-description-616820144"}}
+2017-10-02 09:33:21,071 15182 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupRulesTestJSON:test_security_group_rules_create_with_optional_cidr): 200 POST http://10.0.2.201:8774/v2.1/e7b037dfedc141dd9395e7c505841aec/os-security-group-rules 0.144s
+2017-10-02 09:33:21,072 15182 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"security_group_rule": {"to_port": 22, "cidr": "10.2.3.124/24", "parent_group_id": "5089e939-827a-44b9-8275-2688e7edffcf", "ip_protocol": "tcp", "from_port": 22}}
+    Response - Headers: {'status': '200', u'content-length': '236', 'content-location': 'http://10.0.2.201:8774/v2.1/e7b037dfedc141dd9395e7c505841aec/os-security-group-rules', u'x-compute-request-id': 'req-0ab03ade-3e7b-4af7-b3f3-de7e3f9f7278', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:19 GMT', u'content-type': 'application/json'}
+        Body: {"security_group_rule": {"from_port": 22, "group": {}, "ip_protocol": "tcp", "to_port": 22, "parent_group_id": "5089e939-827a-44b9-8275-2688e7edffcf", "ip_range": {"cidr": "10.2.3.124/24"}, "id": "89bb1daf-f2fa-4746-bee5-8e0699ad126b"}}
+0
+]
+tags: -worker-1
+time: 2017-10-02 01:33:21.029607Z
+tags: worker-3
+test: tempest.api.compute.security_groups.test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_delete_the_default_security_group[id-36a1629f-c6da-4a26-b8b8-55e7e5d5cd58,negative]
+time: 2017-10-02 01:33:21.290219Z
+successful: tempest.api.compute.security_groups.test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_delete_the_default_security_group[id-36a1629f-c6da-4a26-b8b8-55e7e5d5cd58,negative] [ multipart
+Content-Type: text/plain;charset=utf8
+pythonlogging:''
+B1D
+2017-10-02 09:33:21,156 15186 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsNegativeTestJSON:test_delete_the_default_security_group): 200 GET http://10.0.2.201:8774/v2.1/f7e2e99a44e941059f520611ec0b376f/os-security-groups 0.124s
+2017-10-02 09:33:21,157 15186 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', u'content-length': '707', 'content-location': 'http://10.0.2.201:8774/v2.1/f7e2e99a44e941059f520611ec0b376f/os-security-groups', u'x-compute-request-id': 'req-4e5ae661-98a5-41c0-b8e5-ec5b9e810ff4', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:19 GMT', u'content-type': 'application/json'}
+        Body: {"security_groups": [{"rules": [{"from_port": null, "group": {"tenant_id": "f7e2e99a44e941059f520611ec0b376f", "name": "default"}, "ip_protocol": null, "to_port": null, "parent_group_id": "b3219266-f752-4aaa-aa43-53b60acc3789", "ip_range": {}, "id": "2568b01d-43cf-4d3d-89d8-0df2191335ac"}, {"from_port": null, "group": {"tenant_id": "f7e2e99a44e941059f520611ec0b376f", "name": "default"}, "ip_protocol": null, "to_port": null, "parent_group_id": "b3219266-f752-4aaa-aa43-53b60acc3789", "ip_range": {}, "id": "99517bb0-9cc0-4e71-a561-10dafbb96ba3"}], "tenant_id": "f7e2e99a44e941059f520611ec0b376f", "id": "b3219266-f752-4aaa-aa43-53b60acc3789", "name": "default", "description": "Default security group"}]}
+2017-10-02 09:33:21,288 15186 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsNegativeTestJSON:test_delete_the_default_security_group): 400 DELETE http://10.0.2.201:8774/v2.1/f7e2e99a44e941059f520611ec0b376f/os-security-groups/b3219266-f752-4aaa-aa43-53b60acc3789 0.125s
+2017-10-02 09:33:21,289 15186 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '400', u'content-length': '182', 'content-location': 'http://10.0.2.201:8774/v2.1/f7e2e99a44e941059f520611ec0b376f/os-security-groups/b3219266-f752-4aaa-aa43-53b60acc3789', u'x-compute-request-id': 'req-5220895a-066a-452e-b322-ffce5c0b8360', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:19 GMT', u'content-type': 'application/json; charset=UTF-8'}
+        Body: {"badRequest": {"message": "Insufficient rights for removing default security group.\nNeutron server returns request_ids: ['req-7a050cbd-e010-4c30-9830-5c3a8c0e8831']", "code": 400}}
+0
+]
+tags: -worker-3
+time: 2017-10-02 01:33:21.290889Z
+tags: worker-3
+test: tempest.api.compute.security_groups.test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_security_group_create_with_duplicate_name[id-9fdb4abc-6b66-4b27-b89c-eb215a956168,negative]
+time: 2017-10-02 01:33:21.291634Z
+skip: tempest.api.compute.security_groups.test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_security_group_create_with_duplicate_name[id-9fdb4abc-6b66-4b27-b89c-eb215a956168,negative] [ multipart
+Content-Type: text/plain;charset=utf8
+reason
+32
+Neutron allows duplicate names for security groups0
+]
+tags: -worker-3
+time: 2017-10-02 01:33:21.293283Z
+tags: worker-3
+test: tempest.api.compute.security_groups.test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_security_group_create_with_invalid_group_description[id-777b6f14-aca9-4758-9e84-38783cfa58bc,negative]
+time: 2017-10-02 01:33:21.296262Z
+skip: tempest.api.compute.security_groups.test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_security_group_create_with_invalid_group_description[id-777b6f14-aca9-4758-9e84-38783cfa58bc,negative] [ multipart
+Content-Type: text/plain;charset=utf8
+reason
+27
+Skipped until Bug: 1161411 is resolved.0
+]
+tags: -worker-3
+time: 2017-10-02 01:33:21.297142Z
+tags: worker-3
+test: tempest.api.compute.security_groups.test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_security_group_create_with_invalid_group_name[id-1759c3cb-b0fc-44b7-86ce-c99236be911d,negative]
+time: 2017-10-02 01:33:21.300076Z
+skip: tempest.api.compute.security_groups.test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_security_group_create_with_invalid_group_name[id-1759c3cb-b0fc-44b7-86ce-c99236be911d,negative] [ multipart
+Content-Type: text/plain;charset=utf8
+reason
+27
+Skipped until Bug: 1161411 is resolved.0
+]
+tags: -worker-3
+time: 2017-10-02 01:33:21.301316Z
+tags: worker-3
+test: tempest.api.compute.security_groups.test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_security_group_get_nonexistent_group[id-673eaec1-9b3e-48ed-bdf1-2786c1b9661c,negative]
+time: 2017-10-02 01:33:21.318485Z
+failure: tempest.api.compute.security_groups.test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_security_group_get_nonexistent_group[id-673eaec1-9b3e-48ed-bdf1-2786c1b9661c,negative] [ multipart
+Content-Type: text/plain;charset=utf8
+pythonlogging:''
+417
+2017-10-02 09:33:21,316 15186 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsNegativeTestJSON:test_security_group_get_nonexistent_group): 400 GET http://10.0.2.201:8774/v2.1/f7e2e99a44e941059f520611ec0b376f/os-security-groups/1095239287 0.012s
+2017-10-02 09:33:21,316 15186 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '400', u'content-length': '76', 'content-location': 'http://10.0.2.201:8774/v2.1/f7e2e99a44e941059f520611ec0b376f/os-security-groups/1095239287', u'x-compute-request-id': 'req-793509a4-6da9-4d58-afbe-9d5891c13e9d', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:19 GMT', u'content-type': 'application/json; charset=UTF-8'}
+        Body: {"badRequest": {"message": "Security group id should be uuid", "code": 400}}
+0
+Content-Type: text/x-traceback;charset=utf8,language=python
+traceback
+AA9
+Traceback (most recent call last):
+  File "tempest/api/compute/security_groups/test_security_groups_negative.py", line 41, in test_security_group_get_nonexistent_group
+    non_exist_id)
+  File "/home/localadmin/.rally/verification/verifier-1e108e63-ede3-4418-99a4-280d59128c53/.venv/local/lib/python2.7/site-packages/testtools/testcase.py", line 485, in assertRaises
+    self.assertThat(our_callable, matcher)
+  File "/home/localadmin/.rally/verification/verifier-1e108e63-ede3-4418-99a4-280d59128c53/.venv/local/lib/python2.7/site-packages/testtools/testcase.py", line 496, in assertThat
+    mismatch_error = self._matchHelper(matchee, matcher, message, verbose)
+  File "/home/localadmin/.rally/verification/verifier-1e108e63-ede3-4418-99a4-280d59128c53/.venv/local/lib/python2.7/site-packages/testtools/testcase.py", line 547, in _matchHelper
+    mismatch = matcher.match(matchee)
+  File "/home/localadmin/.rally/verification/verifier-1e108e63-ede3-4418-99a4-280d59128c53/.venv/local/lib/python2.7/site-packages/testtools/matchers/_exception.py", line 108, in match
+    mismatch = self.exception_matcher.match(exc_info)
+  File "/home/localadmin/.rally/verification/verifier-1e108e63-ede3-4418-99a4-280d59128c53/.venv/local/lib/python2.7/site-packages/testtools/matchers/_higherorder.py", line 62, in match
+    mismatch = matcher.match(matchee)
+  File "/home/localadmin/.rally/verification/verifier-1e108e63-ede3-4418-99a4-280d59128c53/.venv/local/lib/python2.7/site-packages/testtools/testcase.py", line 475, in match
+    reraise(*matchee)
+  File "/home/localadmin/.rally/verification/verifier-1e108e63-ede3-4418-99a4-280d59128c53/.venv/local/lib/python2.7/site-packages/testtools/matchers/_exception.py", line 101, in match
+    result = matchee()
+  File "/home/localadmin/.rally/verification/verifier-1e108e63-ede3-4418-99a4-280d59128c53/.venv/local/lib/python2.7/site-packages/testtools/testcase.py", line 1049, in __call__
+    return self._callable_object(*self._args, **self._kwargs)
+  File "tempest/lib/services/compute/security_groups_client.py", line 53, in show_security_group
+    resp, body = self.get(url)
+  File "tempest/lib/common/rest_client.py", line 285, in get
+    return self.request('GET', url, extra_headers, headers)
+  File "tempest/lib/services/compute/base_compute_client.py", line 48, in request
+    method, url, extra_headers, headers, body, chunked)
+  File "tempest/lib/common/rest_client.py", line 659, in request
+    self._error_checker(resp, resp_body)
+  File "tempest/lib/common/rest_client.py", line 770, in _error_checker
+    raise exceptions.BadRequest(resp_body, resp=resp)
+tempest.lib.exceptions.BadRequest: Bad request
+Details: {u'message': u'Security group id should be uuid', u'code': 400}
+0
+]
+tags: -worker-3
+time: 2017-10-02 01:33:21.323762Z
+tags: worker-3
+test: tempest.api.compute.security_groups.test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_update_non_existent_security_group[id-27edee9c-873d-4da6-a68a-3c256efebe8f,negative]
+time: 2017-10-02 01:33:21.339804Z
+failure: tempest.api.compute.security_groups.test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_update_non_existent_security_group[id-27edee9c-873d-4da6-a68a-3c256efebe8f,negative] [ multipart
+Content-Type: text/plain;charset=utf8
+pythonlogging:''
+473
+2017-10-02 09:33:21,338 15186 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsNegativeTestJSON:test_update_non_existent_security_group): 400 PUT http://10.0.2.201:8774/v2.1/f7e2e99a44e941059f520611ec0b376f/os-security-groups/794687987 0.012s
+2017-10-02 09:33:21,338 15186 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"security_group": {"name": "tempest-sg-1372281007", "description": "tempest-description-48961937"}}
+    Response - Headers: {'status': '400', u'content-length': '76', 'content-location': 'http://10.0.2.201:8774/v2.1/f7e2e99a44e941059f520611ec0b376f/os-security-groups/794687987', u'x-compute-request-id': 'req-74932c5f-c62b-46ba-8458-d517b01ce0ab', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:19 GMT', u'content-type': 'application/json; charset=UTF-8'}
+        Body: {"badRequest": {"message": "Security group id should be uuid", "code": 400}}
+0
+Content-Type: text/x-traceback;charset=utf8,language=python
+traceback
+AB6
+Traceback (most recent call last):
+  File "tempest/api/compute/security_groups/test_security_groups_negative.py", line 178, in test_update_non_existent_security_group
+    description=s_description)
+  File "/home/localadmin/.rally/verification/verifier-1e108e63-ede3-4418-99a4-280d59128c53/.venv/local/lib/python2.7/site-packages/testtools/testcase.py", line 485, in assertRaises
+    self.assertThat(our_callable, matcher)
+  File "/home/localadmin/.rally/verification/verifier-1e108e63-ede3-4418-99a4-280d59128c53/.venv/local/lib/python2.7/site-packages/testtools/testcase.py", line 496, in assertThat
+    mismatch_error = self._matchHelper(matchee, matcher, message, verbose)
+  File "/home/localadmin/.rally/verification/verifier-1e108e63-ede3-4418-99a4-280d59128c53/.venv/local/lib/python2.7/site-packages/testtools/testcase.py", line 547, in _matchHelper
+    mismatch = matcher.match(matchee)
+  File "/home/localadmin/.rally/verification/verifier-1e108e63-ede3-4418-99a4-280d59128c53/.venv/local/lib/python2.7/site-packages/testtools/matchers/_exception.py", line 108, in match
+    mismatch = self.exception_matcher.match(exc_info)
+  File "/home/localadmin/.rally/verification/verifier-1e108e63-ede3-4418-99a4-280d59128c53/.venv/local/lib/python2.7/site-packages/testtools/matchers/_higherorder.py", line 62, in match
+    mismatch = matcher.match(matchee)
+  File "/home/localadmin/.rally/verification/verifier-1e108e63-ede3-4418-99a4-280d59128c53/.venv/local/lib/python2.7/site-packages/testtools/testcase.py", line 475, in match
+    reraise(*matchee)
+  File "/home/localadmin/.rally/verification/verifier-1e108e63-ede3-4418-99a4-280d59128c53/.venv/local/lib/python2.7/site-packages/testtools/matchers/_exception.py", line 101, in match
+    result = matchee()
+  File "/home/localadmin/.rally/verification/verifier-1e108e63-ede3-4418-99a4-280d59128c53/.venv/local/lib/python2.7/site-packages/testtools/testcase.py", line 1049, in __call__
+    return self._callable_object(*self._args, **self._kwargs)
+  File "tempest/lib/services/compute/security_groups_client.py", line 80, in update_security_group
+    post_body)
+  File "tempest/lib/common/rest_client.py", line 334, in put
+    return self.request('PUT', url, extra_headers, headers, body, chunked)
+  File "tempest/lib/services/compute/base_compute_client.py", line 48, in request
+    method, url, extra_headers, headers, body, chunked)
+  File "tempest/lib/common/rest_client.py", line 659, in request
+    self._error_checker(resp, resp_body)
+  File "tempest/lib/common/rest_client.py", line 770, in _error_checker
+    raise exceptions.BadRequest(resp_body, resp=resp)
+tempest.lib.exceptions.BadRequest: Bad request
+Details: {u'message': u'Security group id should be uuid', u'code': 400}
+0
+]
+tags: -worker-3
+time: 2017-10-02 01:33:21.345183Z
+tags: worker-3
+test: tempest.api.compute.security_groups.test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_update_security_group_with_invalid_sg_des[id-97d12b1c-a610-4194-93f1-ba859e718b45,negative]
+time: 2017-10-02 01:33:21.345938Z
+skip: tempest.api.compute.security_groups.test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_update_security_group_with_invalid_sg_des[id-97d12b1c-a610-4194-93f1-ba859e718b45,negative] [ multipart
+Content-Type: text/plain;charset=utf8
+reason
+35
+Neutron does not check the security group description0
+]
+tags: -worker-3
+time: 2017-10-02 01:33:21.346689Z
+tags: worker-3
+test: tempest.api.compute.security_groups.test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_update_security_group_with_invalid_sg_id[id-00579617-fe04-4e1c-9d08-ca7467d2e34b,negative]
+time: 2017-10-02 01:33:21.346939Z
+skip: tempest.api.compute.security_groups.test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_update_security_group_with_invalid_sg_id[id-00579617-fe04-4e1c-9d08-ca7467d2e34b,negative] [ multipart
+Content-Type: text/plain;charset=utf8
+reason
+2C
+Neutron does not check the security group ID0
+]
+tags: -worker-3
+time: 2017-10-02 01:33:21.348166Z
+tags: worker-3
+test: tempest.api.compute.security_groups.test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_update_security_group_with_invalid_sg_name[id-cda8d8b4-59f8-4087-821d-20cf5a03b3b1,negative]
+time: 2017-10-02 01:33:21.348358Z
+skip: tempest.api.compute.security_groups.test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_update_security_group_with_invalid_sg_name[id-cda8d8b4-59f8-4087-821d-20cf5a03b3b1,negative] [ multipart
+Content-Type: text/plain;charset=utf8
+reason
+2E
+Neutron does not check the security group name0
+]
+tags: -worker-3
+time: 2017-10-02 01:33:21.076820Z
+tags: worker-1
+test: tempest.api.compute.security_groups.test_security_group_rules.SecurityGroupRulesTestJSON.test_security_group_rules_create_with_optional_group_id[id-7f5d2899-7705-4d4b-8458-4505188ffab6]
+time: 2017-10-02 01:33:21.518341Z
+successful: tempest.api.compute.security_groups.test_security_group_rules.SecurityGroupRulesTestJSON.test_security_group_rules_create_with_optional_group_id[id-7f5d2899-7705-4d4b-8458-4505188ffab6] [ multipart
+Content-Type: text/plain;charset=utf8
+pythonlogging:''
+101C
+2017-10-02 09:33:21,153 15182 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupRulesTestJSON:test_security_group_rules_create_with_optional_group_id): 200 POST http://10.0.2.201:8774/v2.1/e7b037dfedc141dd9395e7c505841aec/os-security-groups 0.076s
+2017-10-02 09:33:21,154 15182 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"security_group": {"name": "tempest-SecurityGroupRulesTestJSON-securitygroup-361643493", "description": "tempest-description-234459591"}}
+    Response - Headers: {'status': '200', u'content-length': '246', 'content-location': 'http://10.0.2.201:8774/v2.1/e7b037dfedc141dd9395e7c505841aec/os-security-groups', u'x-compute-request-id': 'req-2db30bb5-77ab-4a7f-b9d7-9acdafcb34f5', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:19 GMT', u'content-type': 'application/json'}
+        Body: {"security_group": {"rules": [], "tenant_id": "e7b037dfedc141dd9395e7c505841aec", "id": "e6d439ab-a369-4d73-be04-eb553798b33d", "name": "tempest-SecurityGroupRulesTestJSON-securitygroup-361643493", "description": "tempest-description-234459591"}}
+2017-10-02 09:33:21,293 15182 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupRulesTestJSON:test_security_group_rules_create_with_optional_group_id): 200 POST http://10.0.2.201:8774/v2.1/e7b037dfedc141dd9395e7c505841aec/os-security-groups 0.135s
+2017-10-02 09:33:21,294 15182 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"security_group": {"name": "tempest-SecurityGroupRulesTestJSON-securitygroup-414904446", "description": "tempest-description-164893870"}}
+    Response - Headers: {'status': '200', u'content-length': '246', 'content-location': 'http://10.0.2.201:8774/v2.1/e7b037dfedc141dd9395e7c505841aec/os-security-groups', u'x-compute-request-id': 'req-99b29b2c-a92f-437f-8ac9-9ac6c9b8e7de', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:19 GMT', u'content-type': 'application/json'}
+        Body: {"security_group": {"rules": [], "tenant_id": "e7b037dfedc141dd9395e7c505841aec", "id": "bd1a2a3f-994d-4849-aa95-d8afb617bc12", "name": "tempest-SecurityGroupRulesTestJSON-securitygroup-414904446", "description": "tempest-description-164893870"}}
+2017-10-02 09:33:21,513 15182 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupRulesTestJSON:test_security_group_rules_create_with_optional_group_id): 200 POST http://10.0.2.201:8774/v2.1/e7b037dfedc141dd9395e7c505841aec/os-security-group-rules 0.214s
+2017-10-02 09:33:21,514 15182 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"security_group_rule": {"to_port": 22, "group_id": "bd1a2a3f-994d-4849-aa95-d8afb617bc12", "parent_group_id": "e6d439ab-a369-4d73-be04-eb553798b33d", "ip_protocol": "tcp", "from_port": 22}}
+    Response - Headers: {'status': '200', u'content-length': '330', 'content-location': 'http://10.0.2.201:8774/v2.1/e7b037dfedc141dd9395e7c505841aec/os-security-group-rules', u'x-compute-request-id': 'req-02d60052-fc7a-47a5-b724-300ed9cf64b9', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:19 GMT', u'content-type': 'application/json'}
+        Body: {"security_group_rule": {"from_port": 22, "group": {"tenant_id": "e7b037dfedc141dd9395e7c505841aec", "name": "tempest-SecurityGroupRulesTestJSON-securitygroup-414904446"}, "ip_protocol": "tcp", "to_port": 22, "parent_group_id": "e6d439ab-a369-4d73-be04-eb553798b33d", "ip_range": {}, "id": "5f01fe5a-3e0c-4a0b-9432-1efef0b49775"}}
+0
+]
+tags: -worker-1
+time: 2017-10-02 01:33:21.519063Z
+tags: worker-1
+test: tempest.api.compute.security_groups.test_security_group_rules.SecurityGroupRulesTestJSON.test_security_group_rules_delete_when_peer_group_deleted[id-fc5c5acf-2091-43a6-a6ae-e42760e9ffaf]
+time: 2017-10-02 01:33:22.065811Z
+successful: tempest.api.compute.security_groups.test_security_group_rules.SecurityGroupRulesTestJSON.test_security_group_rules_delete_when_peer_group_deleted[id-fc5c5acf-2091-43a6-a6ae-e42760e9ffaf] [ multipart
+Content-Type: text/plain;charset=utf8
+pythonlogging:''
+1914
+2017-10-02 09:33:21,579 15182 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupRulesTestJSON:test_security_group_rules_delete_when_peer_group_deleted): 200 POST http://10.0.2.201:8774/v2.1/e7b037dfedc141dd9395e7c505841aec/os-security-groups 0.060s
+2017-10-02 09:33:21,580 15182 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"security_group": {"name": "tempest-SecurityGroupRulesTestJSON-securitygroup-1844595943", "description": "tempest-description-1996410552"}}
+    Response - Headers: {'status': '200', u'content-length': '248', 'content-location': 'http://10.0.2.201:8774/v2.1/e7b037dfedc141dd9395e7c505841aec/os-security-groups', u'x-compute-request-id': 'req-3b447990-7016-4bd4-9a34-35b968314458', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:19 GMT', u'content-type': 'application/json'}
+        Body: {"security_group": {"rules": [], "tenant_id": "e7b037dfedc141dd9395e7c505841aec", "id": "65512e0a-3535-4831-a4d4-33bff1b55ded", "name": "tempest-SecurityGroupRulesTestJSON-securitygroup-1844595943", "description": "tempest-description-1996410552"}}
+2017-10-02 09:33:21,658 15182 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupRulesTestJSON:test_security_group_rules_delete_when_peer_group_deleted): 200 POST http://10.0.2.201:8774/v2.1/e7b037dfedc141dd9395e7c505841aec/os-security-groups 0.072s
+2017-10-02 09:33:21,659 15182 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"security_group": {"name": "tempest-SecurityGroupRulesTestJSON-securitygroup-789261340", "description": "tempest-description-987101932"}}
+    Response - Headers: {'status': '200', u'content-length': '246', 'content-location': 'http://10.0.2.201:8774/v2.1/e7b037dfedc141dd9395e7c505841aec/os-security-groups', u'x-compute-request-id': 'req-804a83c2-6d27-42d2-9490-6f8ebe69c006', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:19 GMT', u'content-type': 'application/json'}
+        Body: {"security_group": {"rules": [], "tenant_id": "e7b037dfedc141dd9395e7c505841aec", "id": "dac7ab1a-1ca4-4893-a7f3-4ea4e1265c25", "name": "tempest-SecurityGroupRulesTestJSON-securitygroup-789261340", "description": "tempest-description-987101932"}}
+2017-10-02 09:33:21,877 15182 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupRulesTestJSON:test_security_group_rules_delete_when_peer_group_deleted): 200 POST http://10.0.2.201:8774/v2.1/e7b037dfedc141dd9395e7c505841aec/os-security-group-rules 0.213s
+2017-10-02 09:33:21,877 15182 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"security_group_rule": {"to_port": 22, "group_id": "dac7ab1a-1ca4-4893-a7f3-4ea4e1265c25", "parent_group_id": "65512e0a-3535-4831-a4d4-33bff1b55ded", "ip_protocol": "tcp", "from_port": 22}}
+    Response - Headers: {'status': '200', u'content-length': '330', 'content-location': 'http://10.0.2.201:8774/v2.1/e7b037dfedc141dd9395e7c505841aec/os-security-group-rules', u'x-compute-request-id': 'req-0781ba25-c942-4b86-a5d6-173ec1b3f26b', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:20 GMT', u'content-type': 'application/json'}
+        Body: {"security_group_rule": {"from_port": 22, "group": {"tenant_id": "e7b037dfedc141dd9395e7c505841aec", "name": "tempest-SecurityGroupRulesTestJSON-securitygroup-789261340"}, "ip_protocol": "tcp", "to_port": 22, "parent_group_id": "65512e0a-3535-4831-a4d4-33bff1b55ded", "ip_range": {}, "id": "7164cf6a-6487-41c6-afe6-db0b3037df24"}}
+2017-10-02 09:33:22,026 15182 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupRulesTestJSON:test_security_group_rules_delete_when_peer_group_deleted): 202 DELETE http://10.0.2.201:8774/v2.1/e7b037dfedc141dd9395e7c505841aec/os-security-groups/dac7ab1a-1ca4-4893-a7f3-4ea4e1265c25 0.145s
+2017-10-02 09:33:22,027 15182 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '202', u'content-length': '0', 'content-location': 'http://10.0.2.201:8774/v2.1/e7b037dfedc141dd9395e7c505841aec/os-security-groups/dac7ab1a-1ca4-4893-a7f3-4ea4e1265c25', u'x-compute-request-id': 'req-1d8680e3-c9b8-41e5-83d3-600c504b84f6', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:20 GMT', u'content-type': 'application/json'}
+        Body: 
+2017-10-02 09:33:22,060 15182 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupRulesTestJSON:test_security_group_rules_delete_when_peer_group_deleted): 200 GET http://10.0.2.201:8774/v2.1/e7b037dfedc141dd9395e7c505841aec/os-security-groups/65512e0a-3535-4831-a4d4-33bff1b55ded 0.032s
+2017-10-02 09:33:22,060 15182 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', u'content-length': '248', 'content-location': 'http://10.0.2.201:8774/v2.1/e7b037dfedc141dd9395e7c505841aec/os-security-groups/65512e0a-3535-4831-a4d4-33bff1b55ded', u'x-compute-request-id': 'req-626a6a85-7a3d-4fe7-a230-84a02e1ab87e', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:20 GMT', u'content-type': 'application/json'}
+        Body: {"security_group": {"rules": [], "tenant_id": "e7b037dfedc141dd9395e7c505841aec", "id": "65512e0a-3535-4831-a4d4-33bff1b55ded", "name": "tempest-SecurityGroupRulesTestJSON-securitygroup-1844595943", "description": "tempest-description-1996410552"}}
+0
+]
+tags: -worker-1
+time: 2017-10-02 01:33:22.066623Z
+tags: worker-1
+test: tempest.api.compute.security_groups.test_security_group_rules.SecurityGroupRulesTestJSON.test_security_group_rules_list[id-a6154130-5a55-4850-8be4-5e9e796dbf17,smoke]
+time: 2017-10-02 01:33:22.515307Z
+successful: tempest.api.compute.security_groups.test_security_group_rules.SecurityGroupRulesTestJSON.test_security_group_rules_list[id-a6154130-5a55-4850-8be4-5e9e796dbf17,smoke] [ multipart
+Content-Type: text/plain;charset=utf8
+pythonlogging:''
+1991
+2017-10-02 09:33:22,132 15182 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupRulesTestJSON:test_security_group_rules_list): 200 POST http://10.0.2.201:8774/v2.1/e7b037dfedc141dd9395e7c505841aec/os-security-groups 0.064s
+2017-10-02 09:33:22,132 15182 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"security_group": {"name": "tempest-SecurityGroupRulesTestJSON-securitygroup-823294474", "description": "tempest-description-1249941284"}}
+    Response - Headers: {'status': '200', u'content-length': '247', 'content-location': 'http://10.0.2.201:8774/v2.1/e7b037dfedc141dd9395e7c505841aec/os-security-groups', u'x-compute-request-id': 'req-7ae7835a-694b-46cb-a2e5-2299b420366a', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:20 GMT', u'content-type': 'application/json'}
+        Body: {"security_group": {"rules": [], "tenant_id": "e7b037dfedc141dd9395e7c505841aec", "id": "ce7cb15d-a65b-414b-ad11-e09e1974587d", "name": "tempest-SecurityGroupRulesTestJSON-securitygroup-823294474", "description": "tempest-description-1249941284"}}
+2017-10-02 09:33:22,262 15182 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupRulesTestJSON:test_security_group_rules_list): 200 POST http://10.0.2.201:8774/v2.1/e7b037dfedc141dd9395e7c505841aec/os-security-group-rules 0.124s
+2017-10-02 09:33:22,262 15182 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"security_group_rule": {"to_port": 22, "parent_group_id": "ce7cb15d-a65b-414b-ad11-e09e1974587d", "ip_protocol": "tcp", "from_port": 22}}
+    Response - Headers: {'status': '200', u'content-length': '232', 'content-location': 'http://10.0.2.201:8774/v2.1/e7b037dfedc141dd9395e7c505841aec/os-security-group-rules', u'x-compute-request-id': 'req-bbcce734-9b4b-4660-b0a1-2a75f102e4d5', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:20 GMT', u'content-type': 'application/json'}
+        Body: {"security_group_rule": {"from_port": 22, "group": {}, "ip_protocol": "tcp", "to_port": 22, "parent_group_id": "ce7cb15d-a65b-414b-ad11-e09e1974587d", "ip_range": {"cidr": "0.0.0.0/0"}, "id": "d3e28969-e677-4d3c-ab22-f92130701446"}}
+2017-10-02 09:33:22,373 15182 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupRulesTestJSON:test_security_group_rules_list): 200 POST http://10.0.2.201:8774/v2.1/e7b037dfedc141dd9395e7c505841aec/os-security-group-rules 0.106s
+2017-10-02 09:33:22,374 15182 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"security_group_rule": {"to_port": -1, "parent_group_id": "ce7cb15d-a65b-414b-ad11-e09e1974587d", "ip_protocol": "icmp", "from_port": -1}}
+    Response - Headers: {'status': '200', u'content-length': '233', 'content-location': 'http://10.0.2.201:8774/v2.1/e7b037dfedc141dd9395e7c505841aec/os-security-group-rules', u'x-compute-request-id': 'req-95f20cbb-5674-474a-8daf-b4493b3a6234', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:20 GMT', u'content-type': 'application/json'}
+        Body: {"security_group_rule": {"from_port": -1, "group": {}, "ip_protocol": "icmp", "to_port": -1, "parent_group_id": "ce7cb15d-a65b-414b-ad11-e09e1974587d", "ip_range": {"cidr": "0.0.0.0/0"}, "id": "43d50ce6-f406-4465-8ff3-88e4849a7a76"}}
+2017-10-02 09:33:22,422 15182 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupRulesTestJSON:test_security_group_rules_list): 200 GET http://10.0.2.201:8774/v2.1/e7b037dfedc141dd9395e7c505841aec/os-security-groups/ce7cb15d-a65b-414b-ad11-e09e1974587d 0.044s
+2017-10-02 09:33:22,423 15182 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', u'content-length': '664', 'content-location': 'http://10.0.2.201:8774/v2.1/e7b037dfedc141dd9395e7c505841aec/os-security-groups/ce7cb15d-a65b-414b-ad11-e09e1974587d', u'x-compute-request-id': 'req-c8b8f1cb-80f0-415f-bca8-94fbc19bce15', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:20 GMT', u'content-type': 'application/json'}
+        Body: {"security_group": {"rules": [{"from_port": -1, "group": {}, "ip_protocol": "icmp", "to_port": -1, "parent_group_id": "ce7cb15d-a65b-414b-ad11-e09e1974587d", "ip_range": {"cidr": "0.0.0.0/0"}, "id": "43d50ce6-f406-4465-8ff3-88e4849a7a76"}, {"from_port": 22, "group": {}, "ip_protocol": "tcp", "to_port": 22, "parent_group_id": "ce7cb15d-a65b-414b-ad11-e09e1974587d", "ip_range": {"cidr": "0.0.0.0/0"}, "id": "d3e28969-e677-4d3c-ab22-f92130701446"}], "tenant_id": "e7b037dfedc141dd9395e7c505841aec", "id": "ce7cb15d-a65b-414b-ad11-e09e1974587d", "name": "tempest-SecurityGroupRulesTestJSON-securitygroup-823294474", "description": "tempest-description-1249941284"}}
+2017-10-02 09:33:22,514 15182 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupRulesTestJSON:_run_cleanups): 202 DELETE http://10.0.2.201:8774/v2.1/e7b037dfedc141dd9395e7c505841aec/os-security-group-rules/43d50ce6-f406-4465-8ff3-88e4849a7a76 0.085s
+2017-10-02 09:33:22,514 15182 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '202', u'content-length': '0', 'content-location': 'http://10.0.2.201:8774/v2.1/e7b037dfedc141dd9395e7c505841aec/os-security-group-rules/43d50ce6-f406-4465-8ff3-88e4849a7a76', u'x-compute-request-id': 'req-cabfc201-fac6-4751-a28e-99b907c24e53', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:20 GMT', u'content-type': 'application/json'}
+        Body: 
+0
+]
+tags: -worker-1
+time: 2017-10-02 01:33:22.021112Z
+tags: worker-2
+test: tempest.api.compute.security_groups.test_security_group_rules_negative.SecurityGroupRulesNegativeTestJSON.test_create_security_group_rule_duplicate[id-8bd56d02-3ffa-4d67-9933-b6b9a01d6089,negative]
+time: 2017-10-02 01:33:22.797825Z
+successful: tempest.api.compute.security_groups.test_security_group_rules_negative.SecurityGroupRulesNegativeTestJSON.test_create_security_group_rule_duplicate[id-8bd56d02-3ffa-4d67-9933-b6b9a01d6089,negative] [ multipart
+Content-Type: text/plain;charset=utf8
+pythonlogging:''
+1301
+2017-10-02 09:33:22,514 15184 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupRulesNegativeTestJSON:test_create_security_group_rule_duplicate): 200 POST http://10.0.2.201:8774/v2.1/6adb55385e0a4ad794ca71ea5552cabf/os-security-groups 0.491s
+2017-10-02 09:33:22,514 15184 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"security_group": {"name": "tempest-SecurityGroupRulesNegativeTestJSON-securitygroup-1332138666", "description": "tempest-description-1757570540"}}
+    Response - Headers: {'status': '200', u'content-length': '256', 'content-location': 'http://10.0.2.201:8774/v2.1/6adb55385e0a4ad794ca71ea5552cabf/os-security-groups', u'x-compute-request-id': 'req-2b5e4481-f2e4-4ed9-9148-7fd40936f896', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:20 GMT', u'content-type': 'application/json'}
+        Body: {"security_group": {"rules": [], "tenant_id": "6adb55385e0a4ad794ca71ea5552cabf", "id": "5fcedb69-9f2d-4e20-9235-388a6c9c6a60", "name": "tempest-SecurityGroupRulesNegativeTestJSON-securitygroup-1332138666", "description": "tempest-description-1757570540"}}
+2017-10-02 09:33:22,655 15184 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupRulesNegativeTestJSON:test_create_security_group_rule_duplicate): 200 POST http://10.0.2.201:8774/v2.1/6adb55385e0a4ad794ca71ea5552cabf/os-security-group-rules 0.132s
+2017-10-02 09:33:22,655 15184 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"security_group_rule": {"to_port": 22, "parent_group_id": "5fcedb69-9f2d-4e20-9235-388a6c9c6a60", "ip_protocol": "tcp", "from_port": 22}}
+    Response - Headers: {'status': '200', u'content-length': '232', 'content-location': 'http://10.0.2.201:8774/v2.1/6adb55385e0a4ad794ca71ea5552cabf/os-security-group-rules', u'x-compute-request-id': 'req-da3798f7-91a8-40ee-a723-842bcf29ffc6', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:20 GMT', u'content-type': 'application/json'}
+        Body: {"security_group_rule": {"from_port": 22, "group": {}, "ip_protocol": "tcp", "to_port": 22, "parent_group_id": "5fcedb69-9f2d-4e20-9235-388a6c9c6a60", "ip_range": {"cidr": "0.0.0.0/0"}, "id": "766873fa-3765-4ae7-a18c-7616dcfaee74"}}
+2017-10-02 09:33:22,708 15184 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupRulesNegativeTestJSON:test_create_security_group_rule_duplicate): 400 POST http://10.0.2.201:8774/v2.1/6adb55385e0a4ad794ca71ea5552cabf/os-security-group-rules 0.048s
+2017-10-02 09:33:22,709 15184 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"security_group_rule": {"to_port": 22, "parent_group_id": "5fcedb69-9f2d-4e20-9235-388a6c9c6a60", "ip_protocol": "tcp", "from_port": 22}}
+    Response - Headers: {'status': '400', u'content-length': '114', 'content-location': 'http://10.0.2.201:8774/v2.1/6adb55385e0a4ad794ca71ea5552cabf/os-security-group-rules', u'x-compute-request-id': 'req-ee75a9de-a18a-48e5-aba7-294b6ee4bf68', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:21 GMT', u'content-type': 'application/json; charset=UTF-8'}
+        Body: {"badRequest": {"message": "This rule already exists in group 5fcedb69-9f2d-4e20-9235-388a6c9c6a60", "code": 400}}
+2017-10-02 09:33:22,796 15184 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupRulesNegativeTestJSON:_run_cleanups): 202 DELETE http://10.0.2.201:8774/v2.1/6adb55385e0a4ad794ca71ea5552cabf/os-security-group-rules/766873fa-3765-4ae7-a18c-7616dcfaee74 0.086s
+2017-10-02 09:33:22,796 15184 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '202', u'content-length': '0', 'content-location': 'http://10.0.2.201:8774/v2.1/6adb55385e0a4ad794ca71ea5552cabf/os-security-group-rules/766873fa-3765-4ae7-a18c-7616dcfaee74', u'x-compute-request-id': 'req-21e6213f-1686-41ea-901b-045662c7d7b7', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:21 GMT', u'content-type': 'application/json'}
+        Body: 
+0
+]
+tags: -worker-2
+time: 2017-10-02 01:33:22.798733Z
+tags: worker-2
+test: tempest.api.compute.security_groups.test_security_group_rules_negative.SecurityGroupRulesNegativeTestJSON.test_create_security_group_rule_with_invalid_from_port[id-12bbc875-1045-4f7a-be46-751277baedb9,negative]
+time: 2017-10-02 01:33:22.910041Z
+successful: tempest.api.compute.security_groups.test_security_group_rules_negative.SecurityGroupRulesNegativeTestJSON.test_create_security_group_rule_with_invalid_from_port[id-12bbc875-1045-4f7a-be46-751277baedb9,negative] [ multipart
+Content-Type: text/plain;charset=utf8
+pythonlogging:''
+A22
+2017-10-02 09:33:22,859 15184 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupRulesNegativeTestJSON:test_create_security_group_rule_with_invalid_from_port): 200 POST http://10.0.2.201:8774/v2.1/6adb55385e0a4ad794ca71ea5552cabf/os-security-groups 0.060s
+2017-10-02 09:33:22,860 15184 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"security_group": {"name": "tempest-SecurityGroupRulesNegativeTestJSON-securitygroup-721721027", "description": "tempest-description-1708901800"}}
+    Response - Headers: {'status': '200', u'content-length': '255', 'content-location': 'http://10.0.2.201:8774/v2.1/6adb55385e0a4ad794ca71ea5552cabf/os-security-groups', u'x-compute-request-id': 'req-b0268bae-721c-4079-b2e3-2904c67e095f', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:21 GMT', u'content-type': 'application/json'}
+        Body: {"security_group": {"rules": [], "tenant_id": "6adb55385e0a4ad794ca71ea5552cabf", "id": "fb33d9c8-b456-4b26-af05-72477b92dee4", "name": "tempest-SecurityGroupRulesNegativeTestJSON-securitygroup-721721027", "description": "tempest-description-1708901800"}}
+2017-10-02 09:33:22,908 15184 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupRulesNegativeTestJSON:test_create_security_group_rule_with_invalid_from_port): 400 POST http://10.0.2.201:8774/v2.1/6adb55385e0a4ad794ca71ea5552cabf/os-security-group-rules 0.043s
+2017-10-02 09:33:22,909 15184 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"security_group_rule": {"to_port": 22, "parent_group_id": "fb33d9c8-b456-4b26-af05-72477b92dee4", "ip_protocol": "tcp", "from_port": 2094071340}}
+    Response - Headers: {'status': '400', u'content-length': '123', 'content-location': 'http://10.0.2.201:8774/v2.1/6adb55385e0a4ad794ca71ea5552cabf/os-security-group-rules', u'x-compute-request-id': 'req-4c56ef65-5c64-46a8-ae6d-2aa05894c542', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:21 GMT', u'content-type': 'application/json; charset=UTF-8'}
+        Body: {"badRequest": {"message": "Invalid port range 2094071340:22. Former value cannot be greater than the later", "code": 400}}
+0
+]
+tags: -worker-2
+time: 2017-10-02 01:33:22.910712Z
+tags: worker-2
+test: tempest.api.compute.security_groups.test_security_group_rules_negative.SecurityGroupRulesNegativeTestJSON.test_create_security_group_rule_with_invalid_id[id-2244d7e4-adb7-4ecb-9930-2d77e123ce4f,negative]
+time: 2017-10-02 01:33:22.925904Z
+successful: tempest.api.compute.security_groups.test_security_group_rules_negative.SecurityGroupRulesNegativeTestJSON.test_create_security_group_rule_with_invalid_id[id-2244d7e4-adb7-4ecb-9930-2d77e123ce4f,negative] [ multipart
+Content-Type: text/plain;charset=utf8
+pythonlogging:''
+494
+2017-10-02 09:33:22,924 15184 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupRulesNegativeTestJSON:test_create_security_group_rule_with_invalid_id): 400 POST http://10.0.2.201:8774/v2.1/6adb55385e0a4ad794ca71ea5552cabf/os-security-group-rules 0.012s
+2017-10-02 09:33:22,925 15184 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"security_group_rule": {"to_port": 22, "parent_group_id": "tempest-non_int_id-915746314", "ip_protocol": "tcp", "from_port": 22}}
+    Response - Headers: {'status': '400', u'content-length': '76', 'content-location': 'http://10.0.2.201:8774/v2.1/6adb55385e0a4ad794ca71ea5552cabf/os-security-group-rules', u'x-compute-request-id': 'req-c357bc4c-f739-4755-bfc0-7d689f4b46c4', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:21 GMT', u'content-type': 'application/json; charset=UTF-8'}
+        Body: {"badRequest": {"message": "Security group id should be uuid", "code": 400}}
+0
+]
+tags: -worker-2
+time: 2017-10-02 01:33:22.926519Z
+tags: worker-2
+test: tempest.api.compute.security_groups.test_security_group_rules_negative.SecurityGroupRulesNegativeTestJSON.test_create_security_group_rule_with_invalid_ip_protocol[id-84c81249-9f6e-439c-9bbf-cbb0d2cddbdf,negative]
+time: 2017-10-02 01:33:23.056041Z
+successful: tempest.api.compute.security_groups.test_security_group_rules_negative.SecurityGroupRulesNegativeTestJSON.test_create_security_group_rule_with_invalid_ip_protocol[id-84c81249-9f6e-439c-9bbf-cbb0d2cddbdf,negative] [ multipart
+Content-Type: text/plain;charset=utf8
+pythonlogging:''
+A08
+2017-10-02 09:33:23,016 15184 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupRulesNegativeTestJSON:test_create_security_group_rule_with_invalid_ip_protocol): 200 POST http://10.0.2.201:8774/v2.1/6adb55385e0a4ad794ca71ea5552cabf/os-security-groups 0.088s
+2017-10-02 09:33:23,017 15184 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"security_group": {"name": "tempest-SecurityGroupRulesNegativeTestJSON-securitygroup-667388488", "description": "tempest-description-1512889881"}}
+    Response - Headers: {'status': '200', u'content-length': '255', 'content-location': 'http://10.0.2.201:8774/v2.1/6adb55385e0a4ad794ca71ea5552cabf/os-security-groups', u'x-compute-request-id': 'req-55c4d199-4532-4294-8d3a-02e1d8176b84', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:21 GMT', u'content-type': 'application/json'}
+        Body: {"security_group": {"rules": [], "tenant_id": "6adb55385e0a4ad794ca71ea5552cabf", "id": "375efecb-207f-444d-b3d7-2790293b3f47", "name": "tempest-SecurityGroupRulesNegativeTestJSON-securitygroup-667388488", "description": "tempest-description-1512889881"}}
+2017-10-02 09:33:23,054 15184 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupRulesNegativeTestJSON:test_create_security_group_rule_with_invalid_ip_protocol): 400 POST http://10.0.2.201:8774/v2.1/6adb55385e0a4ad794ca71ea5552cabf/os-security-group-rules 0.032s
+2017-10-02 09:33:23,055 15184 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"security_group_rule": {"to_port": 22, "parent_group_id": "375efecb-207f-444d-b3d7-2790293b3f47", "ip_protocol": "tempest-999-84229587", "from_port": 22}}
+    Response - Headers: {'status': '400', u'content-length': '85', 'content-location': 'http://10.0.2.201:8774/v2.1/6adb55385e0a4ad794ca71ea5552cabf/os-security-group-rules', u'x-compute-request-id': 'req-bc7bb6b2-50c2-447a-bde8-e9dda8d14682', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:21 GMT', u'content-type': 'application/json; charset=UTF-8'}
+        Body: {"badRequest": {"message": "Invalid IP protocol tempest-999-84229587.", "code": 400}}
+0
+]
+tags: -worker-2
+time: 2017-10-02 01:33:23.056704Z
+tags: worker-2
+test: tempest.api.compute.security_groups.test_security_group_rules_negative.SecurityGroupRulesNegativeTestJSON.test_create_security_group_rule_with_invalid_port_range[id-00296fa9-0576-496a-ae15-fbab843189e0,negative]
+time: 2017-10-02 01:33:23.188134Z
+successful: tempest.api.compute.security_groups.test_security_group_rules_negative.SecurityGroupRulesNegativeTestJSON.test_create_security_group_rule_with_invalid_port_range[id-00296fa9-0576-496a-ae15-fbab843189e0,negative] [ multipart
+Content-Type: text/plain;charset=utf8
+pythonlogging:''
+A14
+2017-10-02 09:33:23,129 15184 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupRulesNegativeTestJSON:test_create_security_group_rule_with_invalid_port_range): 200 POST http://10.0.2.201:8774/v2.1/6adb55385e0a4ad794ca71ea5552cabf/os-security-groups 0.071s
+2017-10-02 09:33:23,147 15184 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"security_group": {"name": "tempest-SecurityGroupRulesNegativeTestJSON-securitygroup-1000274718", "description": "tempest-description-450981135"}}
+    Response - Headers: {'status': '200', u'content-length': '255', 'content-location': 'http://10.0.2.201:8774/v2.1/6adb55385e0a4ad794ca71ea5552cabf/os-security-groups', u'x-compute-request-id': 'req-f335ccc7-e605-4837-b3d7-c4f63b2a6bdc', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:21 GMT', u'content-type': 'application/json'}
+        Body: {"security_group": {"rules": [], "tenant_id": "6adb55385e0a4ad794ca71ea5552cabf", "id": "9b14ac18-1129-4a77-a554-e4f3f67ba677", "name": "tempest-SecurityGroupRulesNegativeTestJSON-securitygroup-1000274718", "description": "tempest-description-450981135"}}
+2017-10-02 09:33:23,186 15184 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupRulesNegativeTestJSON:test_create_security_group_rule_with_invalid_port_range): 400 POST http://10.0.2.201:8774/v2.1/6adb55385e0a4ad794ca71ea5552cabf/os-security-group-rules 0.034s
+2017-10-02 09:33:23,187 15184 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"security_group_rule": {"to_port": 21, "parent_group_id": "9b14ac18-1129-4a77-a554-e4f3f67ba677", "ip_protocol": "tcp", "from_port": 22}}
+    Response - Headers: {'status': '400', u'content-length': '115', 'content-location': 'http://10.0.2.201:8774/v2.1/6adb55385e0a4ad794ca71ea5552cabf/os-security-group-rules', u'x-compute-request-id': 'req-34d28216-d2c3-418a-9fbd-d53c375e0dbb', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:21 GMT', u'content-type': 'application/json; charset=UTF-8'}
+        Body: {"badRequest": {"message": "Invalid port range 22:21. Former value cannot be greater than the later", "code": 400}}
+0
+]
+tags: -worker-2
+time: 2017-10-02 01:33:23.188781Z
+tags: worker-2
+test: tempest.api.compute.security_groups.test_security_group_rules_negative.SecurityGroupRulesNegativeTestJSON.test_create_security_group_rule_with_invalid_to_port[id-ff88804d-144f-45d1-bf59-dd155838a43a,negative]
+time: 2017-10-02 01:33:23.301287Z
+successful: tempest.api.compute.security_groups.test_security_group_rules_negative.SecurityGroupRulesNegativeTestJSON.test_create_security_group_rule_with_invalid_to_port[id-ff88804d-144f-45d1-bf59-dd155838a43a,negative] [ multipart
+Content-Type: text/plain;charset=utf8
+pythonlogging:''
+A1A
+2017-10-02 09:33:23,259 15184 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupRulesNegativeTestJSON:test_create_security_group_rule_with_invalid_to_port): 200 POST http://10.0.2.201:8774/v2.1/6adb55385e0a4ad794ca71ea5552cabf/os-security-groups 0.069s
+2017-10-02 09:33:23,259 15184 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"security_group": {"name": "tempest-SecurityGroupRulesNegativeTestJSON-securitygroup-1037244635", "description": "tempest-description-1301969530"}}
+    Response - Headers: {'status': '200', u'content-length': '256', 'content-location': 'http://10.0.2.201:8774/v2.1/6adb55385e0a4ad794ca71ea5552cabf/os-security-groups', u'x-compute-request-id': 'req-23da6671-6d9a-4327-ade9-c7ea69ec70d1', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:21 GMT', u'content-type': 'application/json'}
+        Body: {"security_group": {"rules": [], "tenant_id": "6adb55385e0a4ad794ca71ea5552cabf", "id": "0d2cb5bf-1ec8-4aae-8fc0-e8ff42487ceb", "name": "tempest-SecurityGroupRulesNegativeTestJSON-securitygroup-1037244635", "description": "tempest-description-1301969530"}}
+2017-10-02 09:33:23,299 15184 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupRulesNegativeTestJSON:test_create_security_group_rule_with_invalid_to_port): 400 POST http://10.0.2.201:8774/v2.1/6adb55385e0a4ad794ca71ea5552cabf/os-security-group-rules 0.034s
+2017-10-02 09:33:23,300 15184 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"security_group_rule": {"to_port": 469133821, "parent_group_id": "0d2cb5bf-1ec8-4aae-8fc0-e8ff42487ceb", "ip_protocol": "tcp", "from_port": 22}}
+    Response - Headers: {'status': '400', u'content-length': '118', 'content-location': 'http://10.0.2.201:8774/v2.1/6adb55385e0a4ad794ca71ea5552cabf/os-security-group-rules', u'x-compute-request-id': 'req-fab7b907-b3a0-4de5-9f9b-90f7d5beb30e', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:21 GMT', u'content-type': 'application/json; charset=UTF-8'}
+        Body: {"badRequest": {"message": "Invalid port range 22:469133821. Valid TCP ports should be between 1-65535", "code": 400}}
+0
+]
+tags: -worker-2
+time: 2017-10-02 01:33:23.302056Z
+tags: worker-2
+test: tempest.api.compute.security_groups.test_security_group_rules_negative.SecurityGroupRulesNegativeTestJSON.test_create_security_group_rule_with_non_existent_id[id-1d507e98-7951-469b-82c3-23f1e6b8c254,negative]
+time: 2017-10-02 01:33:23.318942Z
+failure: tempest.api.compute.security_groups.test_security_group_rules_negative.SecurityGroupRulesNegativeTestJSON.test_create_security_group_rule_with_non_existent_id[id-1d507e98-7951-469b-82c3-23f1e6b8c254,negative] [ multipart
+Content-Type: text/plain;charset=utf8
+pythonlogging:''
+485
+2017-10-02 09:33:23,313 15184 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupRulesNegativeTestJSON:test_create_security_group_rule_with_non_existent_id): 400 POST http://10.0.2.201:8774/v2.1/6adb55385e0a4ad794ca71ea5552cabf/os-security-group-rules 0.010s
+2017-10-02 09:33:23,314 15184 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"security_group_rule": {"to_port": 22, "parent_group_id": 2032576488, "ip_protocol": "tcp", "from_port": 22}}
+    Response - Headers: {'status': '400', u'content-length': '76', 'content-location': 'http://10.0.2.201:8774/v2.1/6adb55385e0a4ad794ca71ea5552cabf/os-security-group-rules', u'x-compute-request-id': 'req-c921335e-8f66-4242-8269-058e2dff1d11', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:21 GMT', u'content-type': 'application/json; charset=UTF-8'}
+        Body: {"badRequest": {"message": "Security group id should be uuid", "code": 400}}
+0
+Content-Type: text/x-traceback;charset=utf8,language=python
+traceback
+AE5
+Traceback (most recent call last):
+  File "tempest/api/compute/security_groups/test_security_group_rules_negative.py", line 43, in test_create_security_group_rule_with_non_existent_id
+    to_port=to_port)
+  File "/home/localadmin/.rally/verification/verifier-1e108e63-ede3-4418-99a4-280d59128c53/.venv/local/lib/python2.7/site-packages/testtools/testcase.py", line 485, in assertRaises
+    self.assertThat(our_callable, matcher)
+  File "/home/localadmin/.rally/verification/verifier-1e108e63-ede3-4418-99a4-280d59128c53/.venv/local/lib/python2.7/site-packages/testtools/testcase.py", line 496, in assertThat
+    mismatch_error = self._matchHelper(matchee, matcher, message, verbose)
+  File "/home/localadmin/.rally/verification/verifier-1e108e63-ede3-4418-99a4-280d59128c53/.venv/local/lib/python2.7/site-packages/testtools/testcase.py", line 547, in _matchHelper
+    mismatch = matcher.match(matchee)
+  File "/home/localadmin/.rally/verification/verifier-1e108e63-ede3-4418-99a4-280d59128c53/.venv/local/lib/python2.7/site-packages/testtools/matchers/_exception.py", line 108, in match
+    mismatch = self.exception_matcher.match(exc_info)
+  File "/home/localadmin/.rally/verification/verifier-1e108e63-ede3-4418-99a4-280d59128c53/.venv/local/lib/python2.7/site-packages/testtools/matchers/_higherorder.py", line 62, in match
+    mismatch = matcher.match(matchee)
+  File "/home/localadmin/.rally/verification/verifier-1e108e63-ede3-4418-99a4-280d59128c53/.venv/local/lib/python2.7/site-packages/testtools/testcase.py", line 475, in match
+    reraise(*matchee)
+  File "/home/localadmin/.rally/verification/verifier-1e108e63-ede3-4418-99a4-280d59128c53/.venv/local/lib/python2.7/site-packages/testtools/matchers/_exception.py", line 101, in match
+    result = matchee()
+  File "/home/localadmin/.rally/verification/verifier-1e108e63-ede3-4418-99a4-280d59128c53/.venv/local/lib/python2.7/site-packages/testtools/testcase.py", line 1049, in __call__
+    return self._callable_object(*self._args, **self._kwargs)
+  File "tempest/lib/services/compute/security_group_rules_client.py", line 35, in create_security_group_rule
+    resp, body = self.post(url, post_body)
+  File "tempest/lib/common/rest_client.py", line 270, in post
+    return self.request('POST', url, extra_headers, headers, body, chunked)
+  File "tempest/lib/services/compute/base_compute_client.py", line 48, in request
+    method, url, extra_headers, headers, body, chunked)
+  File "tempest/lib/common/rest_client.py", line 659, in request
+    self._error_checker(resp, resp_body)
+  File "tempest/lib/common/rest_client.py", line 770, in _error_checker
+    raise exceptions.BadRequest(resp_body, resp=resp)
+tempest.lib.exceptions.BadRequest: Bad request
+Details: {u'message': u'Security group id should be uuid', u'code': 400}
+0
+]
+tags: -worker-2
+time: 2017-10-02 01:33:23.320833Z
+tags: worker-2
+test: tempest.api.compute.security_groups.test_security_group_rules_negative.SecurityGroupRulesNegativeTestJSON.test_delete_security_group_rule_with_non_existent_id[id-56fddcca-dbb8-4494-a0db-96e9f869527c,negative]
+time: 2017-10-02 01:33:23.330478Z
+failure: tempest.api.compute.security_groups.test_security_group_rules_negative.SecurityGroupRulesNegativeTestJSON.test_delete_security_group_rule_with_non_existent_id[id-56fddcca-dbb8-4494-a0db-96e9f869527c,negative] [ multipart
+Content-Type: text/plain;charset=utf8
+pythonlogging:''
+431
+2017-10-02 09:33:23,328 15184 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupRulesNegativeTestJSON:test_delete_security_group_rule_with_non_existent_id): 400 DELETE http://10.0.2.201:8774/v2.1/6adb55385e0a4ad794ca71ea5552cabf/os-security-group-rules/242744241 0.006s
+2017-10-02 09:33:23,329 15184 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '400', u'content-length': '76', 'content-location': 'http://10.0.2.201:8774/v2.1/6adb55385e0a4ad794ca71ea5552cabf/os-security-group-rules/242744241', u'x-compute-request-id': 'req-e2d2f4cd-14fe-4acf-bdb7-e0714df9bce0', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:21 GMT', u'content-type': 'application/json; charset=UTF-8'}
+        Body: {"badRequest": {"message": "Security group id should be uuid", "code": 400}}
+0
+Content-Type: text/x-traceback;charset=utf8,language=python
+traceback
+ACE
+Traceback (most recent call last):
+  File "tempest/api/compute/security_groups/test_security_group_rules_negative.py", line 166, in test_delete_security_group_rule_with_non_existent_id
+    non_existent_rule_id)
+  File "/home/localadmin/.rally/verification/verifier-1e108e63-ede3-4418-99a4-280d59128c53/.venv/local/lib/python2.7/site-packages/testtools/testcase.py", line 485, in assertRaises
+    self.assertThat(our_callable, matcher)
+  File "/home/localadmin/.rally/verification/verifier-1e108e63-ede3-4418-99a4-280d59128c53/.venv/local/lib/python2.7/site-packages/testtools/testcase.py", line 496, in assertThat
+    mismatch_error = self._matchHelper(matchee, matcher, message, verbose)
+  File "/home/localadmin/.rally/verification/verifier-1e108e63-ede3-4418-99a4-280d59128c53/.venv/local/lib/python2.7/site-packages/testtools/testcase.py", line 547, in _matchHelper
+    mismatch = matcher.match(matchee)
+  File "/home/localadmin/.rally/verification/verifier-1e108e63-ede3-4418-99a4-280d59128c53/.venv/local/lib/python2.7/site-packages/testtools/matchers/_exception.py", line 108, in match
+    mismatch = self.exception_matcher.match(exc_info)
+  File "/home/localadmin/.rally/verification/verifier-1e108e63-ede3-4418-99a4-280d59128c53/.venv/local/lib/python2.7/site-packages/testtools/matchers/_higherorder.py", line 62, in match
+    mismatch = matcher.match(matchee)
+  File "/home/localadmin/.rally/verification/verifier-1e108e63-ede3-4418-99a4-280d59128c53/.venv/local/lib/python2.7/site-packages/testtools/testcase.py", line 475, in match
+    reraise(*matchee)
+  File "/home/localadmin/.rally/verification/verifier-1e108e63-ede3-4418-99a4-280d59128c53/.venv/local/lib/python2.7/site-packages/testtools/matchers/_exception.py", line 101, in match
+    result = matchee()
+  File "/home/localadmin/.rally/verification/verifier-1e108e63-ede3-4418-99a4-280d59128c53/.venv/local/lib/python2.7/site-packages/testtools/testcase.py", line 1049, in __call__
+    return self._callable_object(*self._args, **self._kwargs)
+  File "tempest/lib/services/compute/security_group_rules_client.py", line 43, in delete_security_group_rule
+    group_rule_id)
+  File "tempest/lib/common/rest_client.py", line 301, in delete
+    return self.request('DELETE', url, extra_headers, headers, body)
+  File "tempest/lib/services/compute/base_compute_client.py", line 48, in request
+    method, url, extra_headers, headers, body, chunked)
+  File "tempest/lib/common/rest_client.py", line 659, in request
+    self._error_checker(resp, resp_body)
+  File "tempest/lib/common/rest_client.py", line 770, in _error_checker
+    raise exceptions.BadRequest(resp_body, resp=resp)
+tempest.lib.exceptions.BadRequest: Bad request
+Details: {u'message': u'Security group id should be uuid', u'code': 400}
+0
+]
+tags: -worker-2
+time: 2017-10-02 01:33:20.362538Z
+tags: worker-0
+test: tempest.api.compute.security_groups.test_security_groups.SecurityGroupsTestJSON.test_list_security_groups_by_server[id-79517d60-535a-438f-af3d-e6feab1cbea7]
+time: 2017-10-02 01:33:34.879565Z
+successful: tempest.api.compute.security_groups.test_security_groups.SecurityGroupsTestJSON.test_list_security_groups_by_server[id-79517d60-535a-438f-af3d-e6feab1cbea7] [ multipart
+Content-Type: text/plain;charset=utf8
+pythonlogging:''
+96C8
+2017-10-02 09:33:21,185 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_list_security_groups_by_server): 200 POST http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups 0.821s
+2017-10-02 09:33:21,186 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"security_group": {"name": "tempest-SecurityGroupsTestJSON-securitygroup-1377708557", "description": "tempest-description-2115961879"}}
+    Response - Headers: {'status': '200', u'content-length': '244', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups', u'x-compute-request-id': 'req-8091cb77-0c88-4d46-a269-221628c5475b', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:19 GMT', u'content-type': 'application/json'}
+        Body: {"security_group": {"rules": [], "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "id": "f421c3fa-9600-4142-b009-1227a4670b37", "name": "tempest-SecurityGroupsTestJSON-securitygroup-1377708557", "description": "tempest-description-2115961879"}}
+2017-10-02 09:33:21,252 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_list_security_groups_by_server): 200 POST http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups 0.058s
+2017-10-02 09:33:21,252 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"security_group": {"name": "tempest-SecurityGroupsTestJSON-securitygroup-2125216680", "description": "tempest-description-1779880857"}}
+    Response - Headers: {'status': '200', u'content-length': '244', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups', u'x-compute-request-id': 'req-d22edc44-5ed3-4f87-b014-e823d94c2c54', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:19 GMT', u'content-type': 'application/json'}
+        Body: {"security_group": {"rules": [], "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "id": "98a3748a-2f82-48ed-8123-af37f3425e61", "name": "tempest-SecurityGroupsTestJSON-securitygroup-2125216680", "description": "tempest-description-1779880857"}}
+2017-10-02 09:33:21,411 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_list_security_groups_by_server): 201 POST http://10.0.2.201:5000/v3/auth/tokens
+2017-10-02 09:33:21,412 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}
+        Body: <omitted>
+    Response - Headers: {'status': '201', u'content-length': '7184', 'content-location': 'http://10.0.2.201:5000/v3/auth/tokens', u'x-subject-token': '<omitted>', u'vary': 'X-Auth-Token', u'server': 'Apache/2.4.7 (Ubuntu)', u'connection': 'close', u'date': 'Mon, 02 Oct 2017 01:33:19 GMT', u'x-openstack-request-id': 'req-59ed90ad-7b83-4acc-a15e-2a1e4da9846f', u'content-type': 'application/json', u'x-distribution': 'Ubuntu'}
+        Body: {"token": {"methods": ["password"], "roles": [{"id": "8406f05e706848ccae4a9cbbfdcea8dd", "name": "Member"}], "expires_at": "2017-10-02T09:33:19.000000Z", "project": {"domain": {"id": "fc23fd636eab441d9fcc3a1e99679704", "name": "default"}, "id": "976c9bda155c46a38ecf80344f6a643d", "name": "tempest-SecurityGroupsTestJSON-1948073417"}, "catalog": [{"endpoints": [{"region_id": "RegionOne", "url": "http://10.0.2.201:8042", "region": "RegionOne", "interface": "public", "id": "0809e580c7904e44b5f379d2ebd515d9"}, {"region_id": "RegionOne", "url": "http://10.0.2.201:8042", "region": "RegionOne", "interface": "admin", "id": "571a7cea74e247aab08d42b1d9c189ca"}, {"region_id": "RegionOne", "url": "http://10.0.2.201:8042", "region": "RegionOne", "interface": "internal", "id": "eda8f292a96841d3b782c3edcf4df33b"}], "type": "alarming", "id": "0e5a6862aebd45438e43517d12afe48a", "name": "aodh"}, {"endpoints": [{"region_id": "RegionOne", "url": "http://10.0.2.201:9696", "region": "RegionOne", "interface": "admin", "id": "5c655ac1fdc744a9ac832cfb2b661e61"}, {"region_id": "RegionOne", "url": "http://10.0.2.201:9696", "region": "RegionOne", "interface": "public", "id": "efc3ad00e9944435b2332c4a1d004882"}, {"region_id": "RegionOne", "url": "http://10.0.2.201:9696", "region": "RegionOne", "interface": "internal", "id": "f0fe5307375344d295f17dd1e8d6f15c"}], "type": "network", "id": "25192570afed4349916ed6c299acf4ce", "name": "neutron"}, {"endpoints": [{"region_id": "RegionOne", "url": "http://10.0.2.201:8776/v1/976c9bda155c46a38ecf80344f6a643d", "region": "RegionOne", "interface": "internal", "id": "8c79e688ed604a11b465e3559f14bc7d"}, {"region_id": "RegionOne", "url": "http://10.0.2.201:8776/v1/976c9bda155c46a38ecf80344f6a643d", "region": "RegionOne", "interface": "public", "id": "8e5a387e29f8437a9ceae3d832474dfd"}, {"region_id": "RegionOne", "url": "http://10.0.2.201:8776/v1/976c9bda155c46a38ecf80344f6a643d", "region": "RegionOne", "interface": "admin", "id": "f84c7b63ab904909b20b06e0f69406f9"}], "type": "volume", "id": "3ddbe210bdbc496e98a095720eb33bdb", "name": "cinder"}, {"endpoints": [{"region_id": "RegionOne", "url": "http://10.0.2.201:9292", "region": "RegionOne", "interface": "internal", "id": "19e396b058524be481bed6ba4d2989bd"}, {"region_id": "RegionOne", "url": "http://10.0.2.201:9292", "region": "RegionOne", "interface": "admin", "id": "5d1ec683847348d39e000d425a429c5e"}, {"region_id": "RegionOne", "url": "http://10.0.2.201:9292", "region": "RegionOne", "interface": "public", "id": "9e91cede064740ec82aec3750a100e63"}], "type": "image", "id": "4da0ca50fe2044069d33c3bfd8be877a", "name": "glance"}, {"endpoints": [{"region_id": "RegionOne", "url": "http://10.0.2.201:8004/v1/976c9bda155c46a38ecf80344f6a643d", "region": "RegionOne", "interface": "public", "id": "69ff32fe1b614a568dbbe682ebb6f86a"}, {"region_id": "RegionOne", "url": "http://10.0.2.201:8004/v1/976c9bda155c46a38ecf80344f6a643d", "region": "RegionOne", "interface": "admin", "id": "e4b17cfda10d4e28aa95632d1662c1de"}, {"region_id": "RegionOne", "url": "http://10.0.2.201:8004/v1/976c9bda155c46a38ecf80344f6a643d", "region": "RegionOne", "interface": "internal", "id": "ed20a30a76a64f299c868c92e1283635"}], "type": "orchestration", "id": "4e2971c91e9040709afb0c25602faac0", "name": "heat"}, {"endpoints": [{"region_id": "RegionOne", "url": "http://10.0.2.201:8779/v1.0/976c9bda155c46a38ecf80344f6a643d", "region": "RegionOne", "interface": "internal", "id": "49b204b323e54762aaac79aae9f69528"}, {"region_id": "RegionOne", "url": "http://10.0.2.201:8779/v1.0/976c9bda155c46a38ecf80344f6a643d", "region": "RegionOne", "interface": "admin", "id": "dc10f9524def44d1b2ebb0db1a2132d2"}, {"region_id": "RegionOne", "url": "http://10.0.2.201:8779/v1.0/976c9bda155c46a38ecf80344f6a643d", "region": "RegionOne", "interface": "public", "id": "efc65bd697bf462880edd693f5152d4c"}], "type": "database", "id": "729ef5bbcbaf472b87bb9cf453a17ab4", "name": "trove"}, {"endpoints": [{"region_id": "RegionOne", "url": "http://10.0.2.201:8777", "region": "RegionOne", "interface": "admin", "id": "3576b07725d847c58fca321d641
+2017-10-02 09:33:21,413 15180 INFO     [tempest.lib.common.fixed_network] (SecurityGroupsTestJSON:test_list_security_groups_by_server) Found network {u'status': u'ACTIVE', u'router:external': False, u'availability_zone_hints': [], u'availability_zones': [], u'ipv4_address_scope': None, u'description': u'', u'provider:physical_network': None, u'subnets': [], u'port_security_enabled': True, u'tenant_id': u'976c9bda155c46a38ecf80344f6a643d', u'created_at': u'2017-10-02T01:33:18', u'tags': [], u'updated_at': u'2017-10-02T01:33:18', u'provider:segmentation_id': 30, u'provider:network_type': u'vxlan', u'ipv6_address_scope': None, u'admin_state_up': True, u'shared': False, u'mtu': 1450, u'id': u'8f51dcd2-c853-45a0-8c39-c39d23c296a6', u'name': u'tempest-SecurityGroupsTestJSON-1362206181-network'} available for tenant
+2017-10-02 09:33:21,796 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_list_security_groups_by_server): 202 POST http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers 0.381s
+2017-10-02 09:33:21,796 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"server": {"flavorRef": "1", "networks": [{"uuid": "8f51dcd2-c853-45a0-8c39-c39d23c296a6"}], "imageRef": "6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "name": "tempest-SecurityGroupsTestJSON-server-1763006669"}}
+    Response - Headers: {'status': '202', u'content-length': '438', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers', u'x-compute-request-id': 'req-be258207-5338-4afc-ae73-6b477ad79ea7', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:20 GMT', u'content-type': 'application/json'}
+        Body: {"server": {"security_groups": [{"name": "default"}], "OS-DCF:diskConfig": "MANUAL", "id": "6a991f59-bdb6-43b6-a071-22546cff81e8", "links": [{"href": "http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8", "rel": "self"}, {"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8", "rel": "bookmark"}], "adminPass": "ygSXRo6z6kj4"}}
+2017-10-02 09:33:22,949 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_list_security_groups_by_server): 200 GET http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8 0.147s
+2017-10-02 09:33:22,949 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', u'content-length': '1386', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8', u'x-compute-request-id': 'req-4ef09aca-5bf0-4685-9c5f-4c3fb1fff6c6', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:21 GMT', u'content-type': 'application/json'}
+        Body: {"server": {"status": "BUILD", "updated": "2017-10-02T01:33:20Z", "hostId": "c43b8d6f27d689eed3d3f0b16bf143a8eb62e55c26179de97a11e093", "addresses": {}, "links": [{"href": "http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8", "rel": "self"}, {"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8", "rel": "bookmark"}], "key_name": null, "image": {"id": "6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/images/6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "rel": "bookmark"}]}, "OS-EXT-STS:task_state": "spawning", "OS-EXT-STS:vm_state": "building", "OS-SRV-USG:launched_at": null, "flavor": {"id": "1", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/flavors/1", "rel": "bookmark"}]}, "id": "6a991f59-bdb6-43b6-a071-22546cff81e8", "OS-SRV-USG:terminated_at": null, "OS-EXT-AZ:availability_zone": "nova", "user_id": "23cec89672b64d36bf6a91109e8eb303", "name": "tempest-SecurityGroupsTestJSON-server-1763006669", "created": "2017-10-02T01:33:20Z", "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "OS-DCF:diskConfig": "MANUAL", "os-extended-volumes:volumes_attached": [], "accessIPv4": "", "accessIPv6": "", "progress": 0, "OS-EXT-STS:power_state": 0, "config_drive": "", "metadata": {}}}
+2017-10-02 09:33:24,161 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_list_security_groups_by_server): 200 GET http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8 0.199s
+2017-10-02 09:33:24,162 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', u'content-length': '1428', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8', u'x-compute-request-id': 'req-e5c97178-0a79-4c63-a39a-ddf900436a09', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:22 GMT', u'content-type': 'application/json'}
+        Body: {"server": {"status": "BUILD", "updated": "2017-10-02T01:33:20Z", "hostId": "c43b8d6f27d689eed3d3f0b16bf143a8eb62e55c26179de97a11e093", "addresses": {}, "links": [{"href": "http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8", "rel": "self"}, {"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8", "rel": "bookmark"}], "key_name": null, "image": {"id": "6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/images/6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "rel": "bookmark"}]}, "OS-EXT-STS:task_state": "spawning", "OS-EXT-STS:vm_state": "building", "OS-SRV-USG:launched_at": null, "flavor": {"id": "1", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/flavors/1", "rel": "bookmark"}]}, "id": "6a991f59-bdb6-43b6-a071-22546cff81e8", "security_groups": [{"name": "default"}], "OS-SRV-USG:terminated_at": null, "OS-EXT-AZ:availability_zone": "nova", "user_id": "23cec89672b64d36bf6a91109e8eb303", "name": "tempest-SecurityGroupsTestJSON-server-1763006669", "created": "2017-10-02T01:33:20Z", "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "OS-DCF:diskConfig": "MANUAL", "os-extended-volumes:volumes_attached": [], "accessIPv4": "", "accessIPv6": "", "progress": 0, "OS-EXT-STS:power_state": 0, "config_drive": "", "metadata": {}}}
+2017-10-02 09:33:25,360 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_list_security_groups_by_server): 200 GET http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8 0.184s
+2017-10-02 09:33:25,360 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', u'content-length': '1428', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8', u'x-compute-request-id': 'req-01440973-b76b-440e-8ecd-6c927150f198', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:23 GMT', u'content-type': 'application/json'}
+        Body: {"server": {"status": "BUILD", "updated": "2017-10-02T01:33:20Z", "hostId": "c43b8d6f27d689eed3d3f0b16bf143a8eb62e55c26179de97a11e093", "addresses": {}, "links": [{"href": "http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8", "rel": "self"}, {"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8", "rel": "bookmark"}], "key_name": null, "image": {"id": "6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/images/6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "rel": "bookmark"}]}, "OS-EXT-STS:task_state": "spawning", "OS-EXT-STS:vm_state": "building", "OS-SRV-USG:launched_at": null, "flavor": {"id": "1", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/flavors/1", "rel": "bookmark"}]}, "id": "6a991f59-bdb6-43b6-a071-22546cff81e8", "security_groups": [{"name": "default"}], "OS-SRV-USG:terminated_at": null, "OS-EXT-AZ:availability_zone": "nova", "user_id": "23cec89672b64d36bf6a91109e8eb303", "name": "tempest-SecurityGroupsTestJSON-server-1763006669", "created": "2017-10-02T01:33:20Z", "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "OS-DCF:diskConfig": "MANUAL", "os-extended-volumes:volumes_attached": [], "accessIPv4": "", "accessIPv6": "", "progress": 0, "OS-EXT-STS:power_state": 0, "config_drive": "", "metadata": {}}}
+2017-10-02 09:33:26,552 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_list_security_groups_by_server): 200 GET http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8 0.177s
+2017-10-02 09:33:26,553 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', u'content-length': '1428', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8', u'x-compute-request-id': 'req-81f38b4c-8e7d-40fd-b5c6-c49c2ba725f1', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:24 GMT', u'content-type': 'application/json'}
+        Body: {"server": {"status": "BUILD", "updated": "2017-10-02T01:33:20Z", "hostId": "c43b8d6f27d689eed3d3f0b16bf143a8eb62e55c26179de97a11e093", "addresses": {}, "links": [{"href": "http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8", "rel": "self"}, {"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8", "rel": "bookmark"}], "key_name": null, "image": {"id": "6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/images/6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "rel": "bookmark"}]}, "OS-EXT-STS:task_state": "spawning", "OS-EXT-STS:vm_state": "building", "OS-SRV-USG:launched_at": null, "flavor": {"id": "1", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/flavors/1", "rel": "bookmark"}]}, "id": "6a991f59-bdb6-43b6-a071-22546cff81e8", "security_groups": [{"name": "default"}], "OS-SRV-USG:terminated_at": null, "OS-EXT-AZ:availability_zone": "nova", "user_id": "23cec89672b64d36bf6a91109e8eb303", "name": "tempest-SecurityGroupsTestJSON-server-1763006669", "created": "2017-10-02T01:33:20Z", "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "OS-DCF:diskConfig": "MANUAL", "os-extended-volumes:volumes_attached": [], "accessIPv4": "", "accessIPv6": "", "progress": 0, "OS-EXT-STS:power_state": 0, "config_drive": "", "metadata": {}}}
+2017-10-02 09:33:27,782 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_list_security_groups_by_server): 200 GET http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8 0.216s
+2017-10-02 09:33:27,783 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', u'content-length': '1428', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8', u'x-compute-request-id': 'req-2dd3353a-0ed5-4b54-83e4-4bd4d00656a7', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:26 GMT', u'content-type': 'application/json'}
+        Body: {"server": {"status": "BUILD", "updated": "2017-10-02T01:33:20Z", "hostId": "c43b8d6f27d689eed3d3f0b16bf143a8eb62e55c26179de97a11e093", "addresses": {}, "links": [{"href": "http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8", "rel": "self"}, {"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8", "rel": "bookmark"}], "key_name": null, "image": {"id": "6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/images/6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "rel": "bookmark"}]}, "OS-EXT-STS:task_state": "spawning", "OS-EXT-STS:vm_state": "building", "OS-SRV-USG:launched_at": null, "flavor": {"id": "1", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/flavors/1", "rel": "bookmark"}]}, "id": "6a991f59-bdb6-43b6-a071-22546cff81e8", "security_groups": [{"name": "default"}], "OS-SRV-USG:terminated_at": null, "OS-EXT-AZ:availability_zone": "nova", "user_id": "23cec89672b64d36bf6a91109e8eb303", "name": "tempest-SecurityGroupsTestJSON-server-1763006669", "created": "2017-10-02T01:33:20Z", "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "OS-DCF:diskConfig": "MANUAL", "os-extended-volumes:volumes_attached": [], "accessIPv4": "", "accessIPv6": "", "progress": 0, "OS-EXT-STS:power_state": 0, "config_drive": "", "metadata": {}}}
+2017-10-02 09:33:29,006 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_list_security_groups_by_server): 200 GET http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8 0.209s
+2017-10-02 09:33:29,007 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', u'content-length': '1428', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8', u'x-compute-request-id': 'req-86c35b16-1337-419e-bd29-7f688fefabc2', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:27 GMT', u'content-type': 'application/json'}
+        Body: {"server": {"status": "BUILD", "updated": "2017-10-02T01:33:20Z", "hostId": "c43b8d6f27d689eed3d3f0b16bf143a8eb62e55c26179de97a11e093", "addresses": {}, "links": [{"href": "http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8", "rel": "self"}, {"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8", "rel": "bookmark"}], "key_name": null, "image": {"id": "6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/images/6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "rel": "bookmark"}]}, "OS-EXT-STS:task_state": "spawning", "OS-EXT-STS:vm_state": "building", "OS-SRV-USG:launched_at": null, "flavor": {"id": "1", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/flavors/1", "rel": "bookmark"}]}, "id": "6a991f59-bdb6-43b6-a071-22546cff81e8", "security_groups": [{"name": "default"}], "OS-SRV-USG:terminated_at": null, "OS-EXT-AZ:availability_zone": "nova", "user_id": "23cec89672b64d36bf6a91109e8eb303", "name": "tempest-SecurityGroupsTestJSON-server-1763006669", "created": "2017-10-02T01:33:20Z", "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "OS-DCF:diskConfig": "MANUAL", "os-extended-volumes:volumes_attached": [], "accessIPv4": "", "accessIPv6": "", "progress": 0, "OS-EXT-STS:power_state": 0, "config_drive": "", "metadata": {}}}
+2017-10-02 09:33:30,250 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_list_security_groups_by_server): 200 GET http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8 0.226s
+2017-10-02 09:33:30,250 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', u'content-length': '1428', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8', u'x-compute-request-id': 'req-4b3f2f27-6717-42aa-bca4-2b4fdfa2fc4c', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:28 GMT', u'content-type': 'application/json'}
+        Body: {"server": {"status": "BUILD", "updated": "2017-10-02T01:33:20Z", "hostId": "c43b8d6f27d689eed3d3f0b16bf143a8eb62e55c26179de97a11e093", "addresses": {}, "links": [{"href": "http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8", "rel": "self"}, {"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8", "rel": "bookmark"}], "key_name": null, "image": {"id": "6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/images/6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "rel": "bookmark"}]}, "OS-EXT-STS:task_state": "spawning", "OS-EXT-STS:vm_state": "building", "OS-SRV-USG:launched_at": null, "flavor": {"id": "1", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/flavors/1", "rel": "bookmark"}]}, "id": "6a991f59-bdb6-43b6-a071-22546cff81e8", "security_groups": [{"name": "default"}], "OS-SRV-USG:terminated_at": null, "OS-EXT-AZ:availability_zone": "nova", "user_id": "23cec89672b64d36bf6a91109e8eb303", "name": "tempest-SecurityGroupsTestJSON-server-1763006669", "created": "2017-10-02T01:33:20Z", "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "OS-DCF:diskConfig": "MANUAL", "os-extended-volumes:volumes_attached": [], "accessIPv4": "", "accessIPv6": "", "progress": 0, "OS-EXT-STS:power_state": 0, "config_drive": "", "metadata": {}}}
+2017-10-02 09:33:31,456 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_list_security_groups_by_server): 200 GET http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8 0.192s
+2017-10-02 09:33:31,457 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', u'content-length': '1428', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8', u'x-compute-request-id': 'req-9b441897-a1f8-4758-9d7a-6ea4ce5acd2c', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:29 GMT', u'content-type': 'application/json'}
+        Body: {"server": {"status": "BUILD", "updated": "2017-10-02T01:33:20Z", "hostId": "c43b8d6f27d689eed3d3f0b16bf143a8eb62e55c26179de97a11e093", "addresses": {}, "links": [{"href": "http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8", "rel": "self"}, {"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8", "rel": "bookmark"}], "key_name": null, "image": {"id": "6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/images/6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "rel": "bookmark"}]}, "OS-EXT-STS:task_state": "spawning", "OS-EXT-STS:vm_state": "building", "OS-SRV-USG:launched_at": null, "flavor": {"id": "1", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/flavors/1", "rel": "bookmark"}]}, "id": "6a991f59-bdb6-43b6-a071-22546cff81e8", "security_groups": [{"name": "default"}], "OS-SRV-USG:terminated_at": null, "OS-EXT-AZ:availability_zone": "nova", "user_id": "23cec89672b64d36bf6a91109e8eb303", "name": "tempest-SecurityGroupsTestJSON-server-1763006669", "created": "2017-10-02T01:33:20Z", "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "OS-DCF:diskConfig": "MANUAL", "os-extended-volumes:volumes_attached": [], "accessIPv4": "", "accessIPv6": "", "progress": 0, "OS-EXT-STS:power_state": 0, "config_drive": "", "metadata": {}}}
+2017-10-02 09:33:32,658 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_list_security_groups_by_server): 200 GET http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8 0.187s
+2017-10-02 09:33:32,658 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', u'content-length': '1428', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8', u'x-compute-request-id': 'req-dfd9f560-a6b9-4795-a45d-a4586e34cc3f', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:30 GMT', u'content-type': 'application/json'}
+        Body: {"server": {"status": "BUILD", "updated": "2017-10-02T01:33:20Z", "hostId": "c43b8d6f27d689eed3d3f0b16bf143a8eb62e55c26179de97a11e093", "addresses": {}, "links": [{"href": "http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8", "rel": "self"}, {"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8", "rel": "bookmark"}], "key_name": null, "image": {"id": "6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/images/6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "rel": "bookmark"}]}, "OS-EXT-STS:task_state": "spawning", "OS-EXT-STS:vm_state": "building", "OS-SRV-USG:launched_at": null, "flavor": {"id": "1", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/flavors/1", "rel": "bookmark"}]}, "id": "6a991f59-bdb6-43b6-a071-22546cff81e8", "security_groups": [{"name": "default"}], "OS-SRV-USG:terminated_at": null, "OS-EXT-AZ:availability_zone": "nova", "user_id": "23cec89672b64d36bf6a91109e8eb303", "name": "tempest-SecurityGroupsTestJSON-server-1763006669", "created": "2017-10-02T01:33:20Z", "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "OS-DCF:diskConfig": "MANUAL", "os-extended-volumes:volumes_attached": [], "accessIPv4": "", "accessIPv6": "", "progress": 0, "OS-EXT-STS:power_state": 0, "config_drive": "", "metadata": {}}}
+2017-10-02 09:33:33,858 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_list_security_groups_by_server): 200 GET http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8 0.187s
+2017-10-02 09:33:33,859 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', u'content-length': '1612', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8', u'x-compute-request-id': 'req-35c8e559-fb33-4862-82ab-17e0bcdc2941', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:32 GMT', u'content-type': 'application/json'}
+        Body: {"server": {"status": "ACTIVE", "updated": "2017-10-02T01:33:31Z", "hostId": "c43b8d6f27d689eed3d3f0b16bf143a8eb62e55c26179de97a11e093", "addresses": {"tempest-SecurityGroupsTestJSON-1362206181-network": [{"OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:0a:42:83", "version": 4, "addr": "10.100.0.2", "OS-EXT-IPS:type": "fixed"}]}, "links": [{"href": "http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8", "rel": "self"}, {"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8", "rel": "bookmark"}], "key_name": null, "image": {"id": "6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/images/6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "rel": "bookmark"}]}, "OS-EXT-STS:task_state": null, "OS-EXT-STS:vm_state": "active", "OS-SRV-USG:launched_at": "2017-10-02T01:33:31.000000", "flavor": {"id": "1", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/flavors/1", "rel": "bookmark"}]}, "id": "6a991f59-bdb6-43b6-a071-22546cff81e8", "security_groups": [{"name": "default"}], "OS-SRV-USG:terminated_at": null, "OS-EXT-AZ:availability_zone": "nova", "user_id": "23cec89672b64d36bf6a91109e8eb303", "name": "tempest-SecurityGroupsTestJSON-server-1763006669", "created": "2017-10-02T01:33:20Z", "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "OS-DCF:diskConfig": "MANUAL", "os-extended-volumes:volumes_attached": [], "accessIPv4": "", "accessIPv6": "", "progress": 0, "OS-EXT-STS:power_state": 1, "config_drive": "", "metadata": {}}}
+2017-10-02 09:33:33,872 15180 INFO     [tempest.common.waiters] State transition "BUILD/spawning" ==> "ACTIVE/None" after 11 second wait
+2017-10-02 09:33:34,192 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_list_security_groups_by_server): 202 POST http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8/action 0.320s
+2017-10-02 09:33:34,194 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"addSecurityGroup": {"name": "tempest-SecurityGroupsTestJSON-securitygroup-1377708557"}}
+    Response - Headers: {'status': '202', u'content-length': '0', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8/action', u'x-compute-request-id': 'req-bdb33a9a-81ec-49f0-8e08-c00234121684', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:32 GMT', u'content-type': 'application/json'}
+        Body: 
+2017-10-02 09:33:34,701 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_list_security_groups_by_server): 202 POST http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8/action 0.506s
+2017-10-02 09:33:34,702 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"addSecurityGroup": {"name": "tempest-SecurityGroupsTestJSON-securitygroup-2125216680"}}
+    Response - Headers: {'status': '202', u'content-length': '0', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8/action', u'x-compute-request-id': 'req-eca33f42-068d-4030-bd67-2070bdc93961', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:33 GMT', u'content-type': 'application/json'}
+        Body: 
+2017-10-02 09:33:34,872 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_list_security_groups_by_server): 200 GET http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8/os-security-groups 0.169s
+2017-10-02 09:33:34,872 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', u'content-length': '1159', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/6a991f59-bdb6-43b6-a071-22546cff81e8/os-security-groups', u'x-compute-request-id': 'req-44f087f1-0518-45cc-9078-bb380fa87f39', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:33 GMT', u'content-type': 'application/json'}
+        Body: {"security_groups": [{"rules": [{"from_port": null, "group": {"tenant_id": "976c9bda155c46a38ecf80344f6a643d", "name": "default"}, "ip_protocol": null, "to_port": null, "parent_group_id": "fc75db4e-aee1-4eaf-9123-0811fc45aede", "ip_range": {}, "id": "4dab6557-fb58-4a17-8cef-7f5784f5bdb3"}, {"from_port": null, "group": {"tenant_id": "976c9bda155c46a38ecf80344f6a643d", "name": "default"}, "ip_protocol": null, "to_port": null, "parent_group_id": "fc75db4e-aee1-4eaf-9123-0811fc45aede", "ip_range": {}, "id": "825d8e11-8b4e-4f72-ae6c-62cb0691138a"}], "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "id": "fc75db4e-aee1-4eaf-9123-0811fc45aede", "name": "default", "description": "Default security group"}, {"rules": [], "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "id": "f421c3fa-9600-4142-b009-1227a4670b37", "name": "tempest-SecurityGroupsTestJSON-securitygroup-1377708557", "description": "tempest-description-2115961879"}, {"rules": [], "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "id": "98a3748a-2f82-48ed-8123-af37f3425e61", "name": "tempest-SecurityGroupsTestJSON-securitygroup-2125216680", "description": "tempest-description-1779880857"}]}
+0
+]
+tags: -worker-0
+time: 2017-10-02 01:33:34.881059Z
+tags: worker-0
+test: tempest.api.compute.security_groups.test_security_groups.SecurityGroupsTestJSON.test_security_group_create_get_delete[id-ecc0da4a-2117-48af-91af-993cca39a615]
+time: 2017-10-02 01:33:35.144570Z
+successful: tempest.api.compute.security_groups.test_security_groups.SecurityGroupsTestJSON.test_security_group_create_get_delete[id-ecc0da4a-2117-48af-91af-993cca39a615] [ multipart
+Content-Type: text/plain;charset=utf8
+pythonlogging:''
+124D
+2017-10-02 09:33:34,952 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_security_group_create_get_delete): 200 POST http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups 0.070s
+2017-10-02 09:33:34,952 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"security_group": {"name": " tempest-securitygroup -1300808222 ", "description": "tempest-description-1992303546"}}
+    Response - Headers: {'status': '200', u'content-length': '224', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups', u'x-compute-request-id': 'req-9197d09a-381d-4a88-a49c-cfc240bb06b9', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:33 GMT', u'content-type': 'application/json'}
+        Body: {"security_group": {"rules": [], "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "id": "a660f89c-ad52-4d97-998b-f6ff2feb3ad7", "name": " tempest-securitygroup -1300808222 ", "description": "tempest-description-1992303546"}}
+2017-10-02 09:33:35,001 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_security_group_create_get_delete): 200 GET http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups/a660f89c-ad52-4d97-998b-f6ff2feb3ad7 0.043s
+2017-10-02 09:33:35,001 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', u'content-length': '224', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups/a660f89c-ad52-4d97-998b-f6ff2feb3ad7', u'x-compute-request-id': 'req-31b4fc38-39ed-4a0d-b69d-c0bd1d3658d9', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:33 GMT', u'content-type': 'application/json'}
+        Body: {"security_group": {"rules": [], "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "id": "a660f89c-ad52-4d97-998b-f6ff2feb3ad7", "name": " tempest-securitygroup -1300808222 ", "description": "tempest-description-1992303546"}}
+2017-10-02 09:33:35,105 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_security_group_create_get_delete): 202 DELETE http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups/a660f89c-ad52-4d97-998b-f6ff2feb3ad7 0.099s
+2017-10-02 09:33:35,105 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '202', u'content-length': '0', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups/a660f89c-ad52-4d97-998b-f6ff2feb3ad7', u'x-compute-request-id': 'req-3b9476c2-65d3-49c8-85ee-fb6a5193ca39', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:33 GMT', u'content-type': 'application/json'}
+        Body: 
+2017-10-02 09:33:35,143 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_security_group_create_get_delete): 404 GET http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups/a660f89c-ad52-4d97-998b-f6ff2feb3ad7 0.036s
+2017-10-02 09:33:35,143 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '404', u'content-length': '194', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups/a660f89c-ad52-4d97-998b-f6ff2feb3ad7', u'x-compute-request-id': 'req-1a5bc3d1-fcd5-454c-bc26-f90ddf7ed3c4', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:33 GMT', u'content-type': 'application/json; charset=UTF-8'}
+        Body: {"itemNotFound": {"message": "Security group a660f89c-ad52-4d97-998b-f6ff2feb3ad7 does not exist\nNeutron server returns request_ids: ['req-1b82174a-2f5d-4ad2-bad1-cee52d24b98c']", "code": 404}}
+0
+]
+tags: -worker-0
+time: 2017-10-02 01:33:35.145355Z
+tags: worker-0
+test: tempest.api.compute.security_groups.test_security_groups.SecurityGroupsTestJSON.test_security_groups_create_list_delete[id-eb2b087d-633d-4d0d-a7bd-9e6ba35b32de,smoke]
+time: 2017-10-02 01:33:36.238510Z
+successful: tempest.api.compute.security_groups.test_security_groups.SecurityGroupsTestJSON.test_security_groups_create_list_delete[id-eb2b087d-633d-4d0d-a7bd-9e6ba35b32de,smoke] [ multipart
+Content-Type: text/plain;charset=utf8
+pythonlogging:''
+3C06
+2017-10-02 09:33:35,224 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_security_groups_create_list_delete): 200 POST http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups 0.078s
+2017-10-02 09:33:35,225 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"security_group": {"name": "tempest-SecurityGroupsTestJSON-securitygroup-592699433", "description": "tempest-description-376245591"}}
+    Response - Headers: {'status': '200', u'content-length': '242', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups', u'x-compute-request-id': 'req-6092bba4-365c-4b91-b4b4-ff3fa27777e6', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:33 GMT', u'content-type': 'application/json'}
+        Body: {"security_group": {"rules": [], "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "id": "17e77bcb-9e8f-4100-b7a0-a42a3897b5af", "name": "tempest-SecurityGroupsTestJSON-securitygroup-592699433", "description": "tempest-description-376245591"}}
+2017-10-02 09:33:35,308 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_security_groups_create_list_delete): 200 POST http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups 0.078s
+2017-10-02 09:33:35,309 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"security_group": {"name": "tempest-SecurityGroupsTestJSON-securitygroup-1947115068", "description": "tempest-description-1582819501"}}
+    Response - Headers: {'status': '200', u'content-length': '244', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups', u'x-compute-request-id': 'req-05988c77-d785-4051-8a90-fbf62d67e2bb', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:33 GMT', u'content-type': 'application/json'}
+        Body: {"security_group": {"rules": [], "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "id": "151f2824-db40-4429-892f-1fda71170c68", "name": "tempest-SecurityGroupsTestJSON-securitygroup-1947115068", "description": "tempest-description-1582819501"}}
+2017-10-02 09:33:35,378 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_security_groups_create_list_delete): 200 POST http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups 0.064s
+2017-10-02 09:33:35,379 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"security_group": {"name": "tempest-SecurityGroupsTestJSON-securitygroup-58968355", "description": "tempest-description-1991673368"}}
+    Response - Headers: {'status': '200', u'content-length': '242', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups', u'x-compute-request-id': 'req-c3a22586-7988-4569-b9ae-04880717c2bb', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:33 GMT', u'content-type': 'application/json'}
+        Body: {"security_group": {"rules": [], "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "id": "fe9a6153-5e47-407f-ae95-5cbf52eadf4d", "name": "tempest-SecurityGroupsTestJSON-securitygroup-58968355", "description": "tempest-description-1991673368"}}
+2017-10-02 09:33:35,494 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_security_groups_create_list_delete): 200 GET http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups 0.110s
+2017-10-02 09:33:35,494 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', u'content-length': '1833', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups', u'x-compute-request-id': 'req-771be8c0-5acf-4724-a0f0-39b073834534', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:33 GMT', u'content-type': 'application/json'}
+        Body: {"security_groups": [{"rules": [{"from_port": null, "group": {"tenant_id": "976c9bda155c46a38ecf80344f6a643d", "name": "default"}, "ip_protocol": null, "to_port": null, "parent_group_id": "fc75db4e-aee1-4eaf-9123-0811fc45aede", "ip_range": {}, "id": "4dab6557-fb58-4a17-8cef-7f5784f5bdb3"}, {"from_port": null, "group": {"tenant_id": "976c9bda155c46a38ecf80344f6a643d", "name": "default"}, "ip_protocol": null, "to_port": null, "parent_group_id": "fc75db4e-aee1-4eaf-9123-0811fc45aede", "ip_range": {}, "id": "825d8e11-8b4e-4f72-ae6c-62cb0691138a"}], "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "id": "fc75db4e-aee1-4eaf-9123-0811fc45aede", "name": "default", "description": "Default security group"}, {"rules": [], "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "id": "f421c3fa-9600-4142-b009-1227a4670b37", "name": "tempest-SecurityGroupsTestJSON-securitygroup-1377708557", "description": "tempest-description-2115961879"}, {"rules": [], "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "id": "151f2824-db40-4429-892f-1fda71170c68", "name": "tempest-SecurityGroupsTestJSON-securitygroup-1947115068", "description": "tempest-description-1582819501"}, {"rules": [], "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "id": "98a3748a-2f82-48ed-8123-af37f3425e61", "name": "tempest-SecurityGroupsTestJSON-securitygroup-2125216680", "description": "tempest-description-1779880857"}, {"rules": [], "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "id": "fe9a6153-5e47-407f-ae95-5cbf52eadf4d", "name": "tempest-SecurityGroupsTestJSON-securitygroup-58968355", "description": "tempest-description-1991673368"}, {"rules": [], "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "id": "17e77bcb-9e8f-4100-b7a0-a42a3897b5af", "name": "tempest-SecurityGroupsTestJSON-securitygroup-592699433", "description": "tempest-description-376245591"}]}
+2017-10-02 09:33:35,606 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_security_groups_create_list_delete): 202 DELETE http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups/17e77bcb-9e8f-4100-b7a0-a42a3897b5af 0.106s
+2017-10-02 09:33:35,607 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '202', u'content-length': '0', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups/17e77bcb-9e8f-4100-b7a0-a42a3897b5af', u'x-compute-request-id': 'req-dea301d4-13a5-4bd0-8123-2c7b371d311a', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:33 GMT', u'content-type': 'application/json'}
+        Body: 
+2017-10-02 09:33:35,648 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_security_groups_create_list_delete): 404 GET http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups/17e77bcb-9e8f-4100-b7a0-a42a3897b5af 0.040s
+2017-10-02 09:33:35,649 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '404', u'content-length': '194', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups/17e77bcb-9e8f-4100-b7a0-a42a3897b5af', u'x-compute-request-id': 'req-c9044cbd-dc55-4b53-a30d-3d71ea800119', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:33 GMT', u'content-type': 'application/json; charset=UTF-8'}
+        Body: {"itemNotFound": {"message": "Security group 17e77bcb-9e8f-4100-b7a0-a42a3897b5af does not exist\nNeutron server returns request_ids: ['req-8dbbcd15-8103-4ab6-93b9-100ec2597b2d']", "code": 404}}
+2017-10-02 09:33:35,894 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_security_groups_create_list_delete): 202 DELETE http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups/151f2824-db40-4429-892f-1fda71170c68 0.244s
+2017-10-02 09:33:35,895 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '202', u'content-length': '0', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups/151f2824-db40-4429-892f-1fda71170c68', u'x-compute-request-id': 'req-90189576-5cb3-4a13-9f39-1cbf95686b0d', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:34 GMT', u'content-type': 'application/json'}
+        Body: 
+2017-10-02 09:33:35,934 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_security_groups_create_list_delete): 404 GET http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups/151f2824-db40-4429-892f-1fda71170c68 0.038s
+2017-10-02 09:33:35,934 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '404', u'content-length': '194', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups/151f2824-db40-4429-892f-1fda71170c68', u'x-compute-request-id': 'req-63256c6d-e0c9-4c73-bd12-b32beae3fe52', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:34 GMT', u'content-type': 'application/json; charset=UTF-8'}
+        Body: {"itemNotFound": {"message": "Security group 151f2824-db40-4429-892f-1fda71170c68 does not exist\nNeutron server returns request_ids: ['req-2c09f1b7-aca4-4cba-8cd7-e4de9b335c47']", "code": 404}}
+2017-10-02 09:33:36,048 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_security_groups_create_list_delete): 202 DELETE http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups/fe9a6153-5e47-407f-ae95-5cbf52eadf4d 0.112s
+2017-10-02 09:33:36,048 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '202', u'content-length': '0', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups/fe9a6153-5e47-407f-ae95-5cbf52eadf4d', u'x-compute-request-id': 'req-ce9a29a7-de19-4ab3-b387-1a304e0107d5', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:34 GMT', u'content-type': 'application/json'}
+        Body: 
+2017-10-02 09:33:36,087 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_security_groups_create_list_delete): 404 GET http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups/fe9a6153-5e47-407f-ae95-5cbf52eadf4d 0.038s
+2017-10-02 09:33:36,088 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '404', u'content-length': '194', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups/fe9a6153-5e47-407f-ae95-5cbf52eadf4d', u'x-compute-request-id': 'req-cda655a0-12e1-4e95-90aa-1f0b50d7c3c2', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:34 GMT', u'content-type': 'application/json; charset=UTF-8'}
+        Body: {"itemNotFound": {"message": "Security group fe9a6153-5e47-407f-ae95-5cbf52eadf4d does not exist\nNeutron server returns request_ids: ['req-2402a013-d37d-42f1-b0d2-6d08cb738acb']", "code": 404}}
+2017-10-02 09:33:36,231 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_security_groups_create_list_delete): 200 GET http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups 0.142s
+2017-10-02 09:33:36,232 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', u'content-length': '1159', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups', u'x-compute-request-id': 'req-8ecb5e77-3485-466c-adbf-7398e2484149', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:34 GMT', u'content-type': 'application/json'}
+        Body: {"security_groups": [{"rules": [{"from_port": null, "group": {"tenant_id": "976c9bda155c46a38ecf80344f6a643d", "name": "default"}, "ip_protocol": null, "to_port": null, "parent_group_id": "fc75db4e-aee1-4eaf-9123-0811fc45aede", "ip_range": {}, "id": "4dab6557-fb58-4a17-8cef-7f5784f5bdb3"}, {"from_port": null, "group": {"tenant_id": "976c9bda155c46a38ecf80344f6a643d", "name": "default"}, "ip_protocol": null, "to_port": null, "parent_group_id": "fc75db4e-aee1-4eaf-9123-0811fc45aede", "ip_range": {}, "id": "825d8e11-8b4e-4f72-ae6c-62cb0691138a"}], "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "id": "fc75db4e-aee1-4eaf-9123-0811fc45aede", "name": "default", "description": "Default security group"}, {"rules": [], "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "id": "f421c3fa-9600-4142-b009-1227a4670b37", "name": "tempest-SecurityGroupsTestJSON-securitygroup-1377708557", "description": "tempest-description-2115961879"}, {"rules": [], "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "id": "98a3748a-2f82-48ed-8123-af37f3425e61", "name": "tempest-SecurityGroupsTestJSON-securitygroup-2125216680", "description": "tempest-description-1779880857"}]}
+0
+]
+tags: -worker-0
+time: 2017-10-02 01:33:36.239507Z
+tags: worker-0
+test: tempest.api.compute.security_groups.test_security_groups.SecurityGroupsTestJSON.test_server_security_groups[id-fe4abc0d-83f5-4c50-ad11-57a1127297a2]
+time: 2017-10-02 01:33:54.589057Z
+successful: tempest.api.compute.security_groups.test_security_groups.SecurityGroupsTestJSON.test_server_security_groups[id-fe4abc0d-83f5-4c50-ad11-57a1127297a2] [ multipart
+Content-Type: text/plain;charset=utf8
+pythonlogging:''
+CAA2
+2017-10-02 09:33:36,311 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_server_security_groups): 200 POST http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups 0.071s
+2017-10-02 09:33:36,311 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"security_group": {"name": "tempest-SecurityGroupsTestJSON-securitygroup-445357879", "description": "tempest-description-1920876902"}}
+    Response - Headers: {'status': '200', u'content-length': '243', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups', u'x-compute-request-id': 'req-55011b0f-8959-4152-8f71-86a009dde14f', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:34 GMT', u'content-type': 'application/json'}
+        Body: {"security_group": {"rules": [], "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "id": "cddb04eb-3915-49fb-bd31-cae3ced91698", "name": "tempest-SecurityGroupsTestJSON-securitygroup-445357879", "description": "tempest-description-1920876902"}}
+2017-10-02 09:33:36,386 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_server_security_groups): 200 POST http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups 0.068s
+2017-10-02 09:33:36,386 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"security_group": {"name": "tempest-SecurityGroupsTestJSON-securitygroup-992774273", "description": "tempest-description-1195915234"}}
+    Response - Headers: {'status': '200', u'content-length': '243', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups', u'x-compute-request-id': 'req-920192bd-1b33-414f-8619-6ea37c8bb2e2', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:34 GMT', u'content-type': 'application/json'}
+        Body: {"security_group": {"rules": [], "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "id": "c5b02ed0-d28e-4f68-9afa-92791fd476ab", "name": "tempest-SecurityGroupsTestJSON-securitygroup-992774273", "description": "tempest-description-1195915234"}}
+2017-10-02 09:33:36,560 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_server_security_groups): 201 POST http://10.0.2.201:5000/v3/auth/tokens
+2017-10-02 09:33:36,560 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}
+        Body: <omitted>
+    Response - Headers: {'status': '201', u'content-length': '7184', 'content-location': 'http://10.0.2.201:5000/v3/auth/tokens', u'x-subject-token': '<omitted>', u'vary': 'X-Auth-Token', u'server': 'Apache/2.4.7 (Ubuntu)', u'connection': 'close', u'date': 'Mon, 02 Oct 2017 01:33:34 GMT', u'x-openstack-request-id': 'req-96fa941d-b40e-47b3-a525-eb93cd9da94d', u'content-type': 'application/json', u'x-distribution': 'Ubuntu'}
+        Body: {"token": {"methods": ["password"], "roles": [{"id": "8406f05e706848ccae4a9cbbfdcea8dd", "name": "Member"}], "expires_at": "2017-10-02T09:33:34.000000Z", "project": {"domain": {"id": "fc23fd636eab441d9fcc3a1e99679704", "name": "default"}, "id": "976c9bda155c46a38ecf80344f6a643d", "name": "tempest-SecurityGroupsTestJSON-1948073417"}, "catalog": [{"endpoints": [{"region_id": "RegionOne", "url": "http://10.0.2.201:8042", "region": "RegionOne", "interface": "public", "id": "0809e580c7904e44b5f379d2ebd515d9"}, {"region_id": "RegionOne", "url": "http://10.0.2.201:8042", "region": "RegionOne", "interface": "admin", "id": "571a7cea74e247aab08d42b1d9c189ca"}, {"region_id": "RegionOne", "url": "http://10.0.2.201:8042", "region": "RegionOne", "interface": "internal", "id": "eda8f292a96841d3b782c3edcf4df33b"}], "type": "alarming", "id": "0e5a6862aebd45438e43517d12afe48a", "name": "aodh"}, {"endpoints": [{"region_id": "RegionOne", "url": "http://10.0.2.201:9696", "region": "RegionOne", "interface": "admin", "id": "5c655ac1fdc744a9ac832cfb2b661e61"}, {"region_id": "RegionOne", "url": "http://10.0.2.201:9696", "region": "RegionOne", "interface": "public", "id": "efc3ad00e9944435b2332c4a1d004882"}, {"region_id": "RegionOne", "url": "http://10.0.2.201:9696", "region": "RegionOne", "interface": "internal", "id": "f0fe5307375344d295f17dd1e8d6f15c"}], "type": "network", "id": "25192570afed4349916ed6c299acf4ce", "name": "neutron"}, {"endpoints": [{"region_id": "RegionOne", "url": "http://10.0.2.201:8776/v1/976c9bda155c46a38ecf80344f6a643d", "region": "RegionOne", "interface": "internal", "id": "8c79e688ed604a11b465e3559f14bc7d"}, {"region_id": "RegionOne", "url": "http://10.0.2.201:8776/v1/976c9bda155c46a38ecf80344f6a643d", "region": "RegionOne", "interface": "public", "id": "8e5a387e29f8437a9ceae3d832474dfd"}, {"region_id": "RegionOne", "url": "http://10.0.2.201:8776/v1/976c9bda155c46a38ecf80344f6a643d", "region": "RegionOne", "interface": "admin", "id": "f84c7b63ab904909b20b06e0f69406f9"}], "type": "volume", "id": "3ddbe210bdbc496e98a095720eb33bdb", "name": "cinder"}, {"endpoints": [{"region_id": "RegionOne", "url": "http://10.0.2.201:9292", "region": "RegionOne", "interface": "internal", "id": "19e396b058524be481bed6ba4d2989bd"}, {"region_id": "RegionOne", "url": "http://10.0.2.201:9292", "region": "RegionOne", "interface": "admin", "id": "5d1ec683847348d39e000d425a429c5e"}, {"region_id": "RegionOne", "url": "http://10.0.2.201:9292", "region": "RegionOne", "interface": "public", "id": "9e91cede064740ec82aec3750a100e63"}], "type": "image", "id": "4da0ca50fe2044069d33c3bfd8be877a", "name": "glance"}, {"endpoints": [{"region_id": "RegionOne", "url": "http://10.0.2.201:8004/v1/976c9bda155c46a38ecf80344f6a643d", "region": "RegionOne", "interface": "public", "id": "69ff32fe1b614a568dbbe682ebb6f86a"}, {"region_id": "RegionOne", "url": "http://10.0.2.201:8004/v1/976c9bda155c46a38ecf80344f6a643d", "region": "RegionOne", "interface": "admin", "id": "e4b17cfda10d4e28aa95632d1662c1de"}, {"region_id": "RegionOne", "url": "http://10.0.2.201:8004/v1/976c9bda155c46a38ecf80344f6a643d", "region": "RegionOne", "interface": "internal", "id": "ed20a30a76a64f299c868c92e1283635"}], "type": "orchestration", "id": "4e2971c91e9040709afb0c25602faac0", "name": "heat"}, {"endpoints": [{"region_id": "RegionOne", "url": "http://10.0.2.201:8779/v1.0/976c9bda155c46a38ecf80344f6a643d", "region": "RegionOne", "interface": "internal", "id": "49b204b323e54762aaac79aae9f69528"}, {"region_id": "RegionOne", "url": "http://10.0.2.201:8779/v1.0/976c9bda155c46a38ecf80344f6a643d", "region": "RegionOne", "interface": "admin", "id": "dc10f9524def44d1b2ebb0db1a2132d2"}, {"region_id": "RegionOne", "url": "http://10.0.2.201:8779/v1.0/976c9bda155c46a38ecf80344f6a643d", "region": "RegionOne", "interface": "public", "id": "efc65bd697bf462880edd693f5152d4c"}], "type": "database", "id": "729ef5bbcbaf472b87bb9cf453a17ab4", "name": "trove"}, {"endpoints": [{"region_id": "RegionOne", "url": "http://10.0.2.201:8777", "region": "RegionOne", "interface": "admin", "id": "3576b07725d847c58fca321d641
+2017-10-02 09:33:36,562 15180 INFO     [tempest.lib.common.fixed_network] (SecurityGroupsTestJSON:test_server_security_groups) Found network {u'status': u'ACTIVE', u'router:external': False, u'availability_zone_hints': [], u'availability_zones': [], u'ipv4_address_scope': None, u'description': u'', u'provider:physical_network': None, u'subnets': [], u'port_security_enabled': True, u'tenant_id': u'976c9bda155c46a38ecf80344f6a643d', u'created_at': u'2017-10-02T01:33:18', u'tags': [], u'updated_at': u'2017-10-02T01:33:18', u'provider:segmentation_id': 30, u'provider:network_type': u'vxlan', u'ipv6_address_scope': None, u'admin_state_up': True, u'shared': False, u'mtu': 1450, u'id': u'8f51dcd2-c853-45a0-8c39-c39d23c296a6', u'name': u'tempest-SecurityGroupsTestJSON-1362206181-network'} available for tenant
+2017-10-02 09:33:36,900 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_server_security_groups): 202 POST http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers 0.337s
+2017-10-02 09:33:36,901 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"server": {"flavorRef": "1", "networks": [{"uuid": "8f51dcd2-c853-45a0-8c39-c39d23c296a6"}], "imageRef": "6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "name": "tempest-SecurityGroupsTestJSON-server-2093930180"}}
+    Response - Headers: {'status': '202', u'content-length': '438', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers', u'x-compute-request-id': 'req-8d0fb2cf-cb74-4b0f-8a6c-1355791b52a7', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:35 GMT', u'content-type': 'application/json'}
+        Body: {"server": {"security_groups": [{"name": "default"}], "OS-DCF:diskConfig": "MANUAL", "id": "24c9db4d-7220-4ffb-bfa8-759c05abde33", "links": [{"href": "http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33", "rel": "self"}, {"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33", "rel": "bookmark"}], "adminPass": "ahk3bTgVA3Db"}}
+2017-10-02 09:33:38,244 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_server_security_groups): 200 GET http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33 0.338s
+2017-10-02 09:33:38,245 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', u'content-length': '1386', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33', u'x-compute-request-id': 'req-496aa720-aed6-443f-9467-734e8c172cc9', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:36 GMT', u'content-type': 'application/json'}
+        Body: {"server": {"status": "BUILD", "updated": "2017-10-02T01:33:36Z", "hostId": "024d43cbef485b8b75acf6b7d1a2a9c9e121d1f329b560f1fb286489", "addresses": {}, "links": [{"href": "http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33", "rel": "self"}, {"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33", "rel": "bookmark"}], "key_name": null, "image": {"id": "6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/images/6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "rel": "bookmark"}]}, "OS-EXT-STS:task_state": "spawning", "OS-EXT-STS:vm_state": "building", "OS-SRV-USG:launched_at": null, "flavor": {"id": "1", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/flavors/1", "rel": "bookmark"}]}, "id": "24c9db4d-7220-4ffb-bfa8-759c05abde33", "OS-SRV-USG:terminated_at": null, "OS-EXT-AZ:availability_zone": "nova", "user_id": "23cec89672b64d36bf6a91109e8eb303", "name": "tempest-SecurityGroupsTestJSON-server-2093930180", "created": "2017-10-02T01:33:35Z", "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "OS-DCF:diskConfig": "MANUAL", "os-extended-volumes:volumes_attached": [], "accessIPv4": "", "accessIPv6": "", "progress": 0, "OS-EXT-STS:power_state": 0, "config_drive": "", "metadata": {}}}
+2017-10-02 09:33:39,473 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_server_security_groups): 200 GET http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33 0.213s
+2017-10-02 09:33:39,475 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', u'content-length': '1428', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33', u'x-compute-request-id': 'req-904d0d3e-725e-4969-a876-6de8a93dbe83', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:37 GMT', u'content-type': 'application/json'}
+        Body: {"server": {"status": "BUILD", "updated": "2017-10-02T01:33:36Z", "hostId": "024d43cbef485b8b75acf6b7d1a2a9c9e121d1f329b560f1fb286489", "addresses": {}, "links": [{"href": "http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33", "rel": "self"}, {"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33", "rel": "bookmark"}], "key_name": null, "image": {"id": "6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/images/6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "rel": "bookmark"}]}, "OS-EXT-STS:task_state": "spawning", "OS-EXT-STS:vm_state": "building", "OS-SRV-USG:launched_at": null, "flavor": {"id": "1", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/flavors/1", "rel": "bookmark"}]}, "id": "24c9db4d-7220-4ffb-bfa8-759c05abde33", "security_groups": [{"name": "default"}], "OS-SRV-USG:terminated_at": null, "OS-EXT-AZ:availability_zone": "nova", "user_id": "23cec89672b64d36bf6a91109e8eb303", "name": "tempest-SecurityGroupsTestJSON-server-2093930180", "created": "2017-10-02T01:33:35Z", "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "OS-DCF:diskConfig": "MANUAL", "os-extended-volumes:volumes_attached": [], "accessIPv4": "", "accessIPv6": "", "progress": 0, "OS-EXT-STS:power_state": 0, "config_drive": "", "metadata": {}}}
+2017-10-02 09:33:40,887 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_server_security_groups): 200 GET http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33 0.398s
+2017-10-02 09:33:40,888 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', u'content-length': '1428', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33', u'x-compute-request-id': 'req-d1691877-3a0a-488d-8391-721c63652420', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:39 GMT', u'content-type': 'application/json'}
+        Body: {"server": {"status": "BUILD", "updated": "2017-10-02T01:33:36Z", "hostId": "024d43cbef485b8b75acf6b7d1a2a9c9e121d1f329b560f1fb286489", "addresses": {}, "links": [{"href": "http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33", "rel": "self"}, {"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33", "rel": "bookmark"}], "key_name": null, "image": {"id": "6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/images/6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "rel": "bookmark"}]}, "OS-EXT-STS:task_state": "spawning", "OS-EXT-STS:vm_state": "building", "OS-SRV-USG:launched_at": null, "flavor": {"id": "1", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/flavors/1", "rel": "bookmark"}]}, "id": "24c9db4d-7220-4ffb-bfa8-759c05abde33", "security_groups": [{"name": "default"}], "OS-SRV-USG:terminated_at": null, "OS-EXT-AZ:availability_zone": "nova", "user_id": "23cec89672b64d36bf6a91109e8eb303", "name": "tempest-SecurityGroupsTestJSON-server-2093930180", "created": "2017-10-02T01:33:35Z", "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "OS-DCF:diskConfig": "MANUAL", "os-extended-volumes:volumes_attached": [], "accessIPv4": "", "accessIPv6": "", "progress": 0, "OS-EXT-STS:power_state": 0, "config_drive": "", "metadata": {}}}
+2017-10-02 09:33:42,119 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_server_security_groups): 200 GET http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33 0.216s
+2017-10-02 09:33:42,120 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', u'content-length': '1428', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33', u'x-compute-request-id': 'req-90973161-39a7-4acc-99fa-d4db1d4f2d8c', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:40 GMT', u'content-type': 'application/json'}
+        Body: {"server": {"status": "BUILD", "updated": "2017-10-02T01:33:36Z", "hostId": "024d43cbef485b8b75acf6b7d1a2a9c9e121d1f329b560f1fb286489", "addresses": {}, "links": [{"href": "http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33", "rel": "self"}, {"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33", "rel": "bookmark"}], "key_name": null, "image": {"id": "6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/images/6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "rel": "bookmark"}]}, "OS-EXT-STS:task_state": "spawning", "OS-EXT-STS:vm_state": "building", "OS-SRV-USG:launched_at": null, "flavor": {"id": "1", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/flavors/1", "rel": "bookmark"}]}, "id": "24c9db4d-7220-4ffb-bfa8-759c05abde33", "security_groups": [{"name": "default"}], "OS-SRV-USG:terminated_at": null, "OS-EXT-AZ:availability_zone": "nova", "user_id": "23cec89672b64d36bf6a91109e8eb303", "name": "tempest-SecurityGroupsTestJSON-server-2093930180", "created": "2017-10-02T01:33:35Z", "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "OS-DCF:diskConfig": "MANUAL", "os-extended-volumes:volumes_attached": [], "accessIPv4": "", "accessIPv6": "", "progress": 0, "OS-EXT-STS:power_state": 0, "config_drive": "", "metadata": {}}}
+2017-10-02 09:33:43,339 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_server_security_groups): 200 GET http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33 0.205s
+2017-10-02 09:33:43,340 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', u'content-length': '1428', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33', u'x-compute-request-id': 'req-9a0023e4-0837-4085-b280-ad2af6e724ef', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:41 GMT', u'content-type': 'application/json'}
+        Body: {"server": {"status": "BUILD", "updated": "2017-10-02T01:33:36Z", "hostId": "024d43cbef485b8b75acf6b7d1a2a9c9e121d1f329b560f1fb286489", "addresses": {}, "links": [{"href": "http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33", "rel": "self"}, {"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33", "rel": "bookmark"}], "key_name": null, "image": {"id": "6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/images/6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "rel": "bookmark"}]}, "OS-EXT-STS:task_state": "spawning", "OS-EXT-STS:vm_state": "building", "OS-SRV-USG:launched_at": null, "flavor": {"id": "1", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/flavors/1", "rel": "bookmark"}]}, "id": "24c9db4d-7220-4ffb-bfa8-759c05abde33", "security_groups": [{"name": "default"}], "OS-SRV-USG:terminated_at": null, "OS-EXT-AZ:availability_zone": "nova", "user_id": "23cec89672b64d36bf6a91109e8eb303", "name": "tempest-SecurityGroupsTestJSON-server-2093930180", "created": "2017-10-02T01:33:35Z", "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "OS-DCF:diskConfig": "MANUAL", "os-extended-volumes:volumes_attached": [], "accessIPv4": "", "accessIPv6": "", "progress": 0, "OS-EXT-STS:power_state": 0, "config_drive": "", "metadata": {}}}
+2017-10-02 09:33:44,566 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_server_security_groups): 200 GET http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33 0.213s
+2017-10-02 09:33:44,568 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', u'content-length': '1428', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33', u'x-compute-request-id': 'req-0143b663-8827-491a-a0d7-cb823c260d2a', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:42 GMT', u'content-type': 'application/json'}
+        Body: {"server": {"status": "BUILD", "updated": "2017-10-02T01:33:36Z", "hostId": "024d43cbef485b8b75acf6b7d1a2a9c9e121d1f329b560f1fb286489", "addresses": {}, "links": [{"href": "http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33", "rel": "self"}, {"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33", "rel": "bookmark"}], "key_name": null, "image": {"id": "6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/images/6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "rel": "bookmark"}]}, "OS-EXT-STS:task_state": "spawning", "OS-EXT-STS:vm_state": "building", "OS-SRV-USG:launched_at": null, "flavor": {"id": "1", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/flavors/1", "rel": "bookmark"}]}, "id": "24c9db4d-7220-4ffb-bfa8-759c05abde33", "security_groups": [{"name": "default"}], "OS-SRV-USG:terminated_at": null, "OS-EXT-AZ:availability_zone": "nova", "user_id": "23cec89672b64d36bf6a91109e8eb303", "name": "tempest-SecurityGroupsTestJSON-server-2093930180", "created": "2017-10-02T01:33:35Z", "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "OS-DCF:diskConfig": "MANUAL", "os-extended-volumes:volumes_attached": [], "accessIPv4": "", "accessIPv6": "", "progress": 0, "OS-EXT-STS:power_state": 0, "config_drive": "", "metadata": {}}}
+2017-10-02 09:33:45,763 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_server_security_groups): 200 GET http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33 0.182s
+2017-10-02 09:33:45,764 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', u'content-length': '1428', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33', u'x-compute-request-id': 'req-bec519c1-941e-4a52-802a-cb4f8cd6328f', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:44 GMT', u'content-type': 'application/json'}
+        Body: {"server": {"status": "BUILD", "updated": "2017-10-02T01:33:36Z", "hostId": "024d43cbef485b8b75acf6b7d1a2a9c9e121d1f329b560f1fb286489", "addresses": {}, "links": [{"href": "http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33", "rel": "self"}, {"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33", "rel": "bookmark"}], "key_name": null, "image": {"id": "6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/images/6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "rel": "bookmark"}]}, "OS-EXT-STS:task_state": "spawning", "OS-EXT-STS:vm_state": "building", "OS-SRV-USG:launched_at": null, "flavor": {"id": "1", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/flavors/1", "rel": "bookmark"}]}, "id": "24c9db4d-7220-4ffb-bfa8-759c05abde33", "security_groups": [{"name": "default"}], "OS-SRV-USG:terminated_at": null, "OS-EXT-AZ:availability_zone": "nova", "user_id": "23cec89672b64d36bf6a91109e8eb303", "name": "tempest-SecurityGroupsTestJSON-server-2093930180", "created": "2017-10-02T01:33:35Z", "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "OS-DCF:diskConfig": "MANUAL", "os-extended-volumes:volumes_attached": [], "accessIPv4": "", "accessIPv6": "", "progress": 0, "OS-EXT-STS:power_state": 0, "config_drive": "", "metadata": {}}}
+2017-10-02 09:33:46,927 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_server_security_groups): 200 GET http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33 0.149s
+2017-10-02 09:33:46,928 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', u'content-length': '1428', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33', u'x-compute-request-id': 'req-ae64d829-7232-417e-9f92-c6acc42a7352', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:45 GMT', u'content-type': 'application/json'}
+        Body: {"server": {"status": "BUILD", "updated": "2017-10-02T01:33:36Z", "hostId": "024d43cbef485b8b75acf6b7d1a2a9c9e121d1f329b560f1fb286489", "addresses": {}, "links": [{"href": "http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33", "rel": "self"}, {"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33", "rel": "bookmark"}], "key_name": null, "image": {"id": "6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/images/6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "rel": "bookmark"}]}, "OS-EXT-STS:task_state": "spawning", "OS-EXT-STS:vm_state": "building", "OS-SRV-USG:launched_at": null, "flavor": {"id": "1", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/flavors/1", "rel": "bookmark"}]}, "id": "24c9db4d-7220-4ffb-bfa8-759c05abde33", "security_groups": [{"name": "default"}], "OS-SRV-USG:terminated_at": null, "OS-EXT-AZ:availability_zone": "nova", "user_id": "23cec89672b64d36bf6a91109e8eb303", "name": "tempest-SecurityGroupsTestJSON-server-2093930180", "created": "2017-10-02T01:33:35Z", "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "OS-DCF:diskConfig": "MANUAL", "os-extended-volumes:volumes_attached": [], "accessIPv4": "", "accessIPv6": "", "progress": 0, "OS-EXT-STS:power_state": 0, "config_drive": "", "metadata": {}}}
+2017-10-02 09:33:48,164 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_server_security_groups): 200 GET http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33 0.223s
+2017-10-02 09:33:48,165 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', u'content-length': '1428', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33', u'x-compute-request-id': 'req-fbf733c5-d5e8-4c99-9e34-c4c60f0ad915', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:46 GMT', u'content-type': 'application/json'}
+        Body: {"server": {"status": "BUILD", "updated": "2017-10-02T01:33:36Z", "hostId": "024d43cbef485b8b75acf6b7d1a2a9c9e121d1f329b560f1fb286489", "addresses": {}, "links": [{"href": "http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33", "rel": "self"}, {"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33", "rel": "bookmark"}], "key_name": null, "image": {"id": "6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/images/6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "rel": "bookmark"}]}, "OS-EXT-STS:task_state": "spawning", "OS-EXT-STS:vm_state": "building", "OS-SRV-USG:launched_at": null, "flavor": {"id": "1", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/flavors/1", "rel": "bookmark"}]}, "id": "24c9db4d-7220-4ffb-bfa8-759c05abde33", "security_groups": [{"name": "default"}], "OS-SRV-USG:terminated_at": null, "OS-EXT-AZ:availability_zone": "nova", "user_id": "23cec89672b64d36bf6a91109e8eb303", "name": "tempest-SecurityGroupsTestJSON-server-2093930180", "created": "2017-10-02T01:33:35Z", "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "OS-DCF:diskConfig": "MANUAL", "os-extended-volumes:volumes_attached": [], "accessIPv4": "", "accessIPv6": "", "progress": 0, "OS-EXT-STS:power_state": 0, "config_drive": "", "metadata": {}}}
+2017-10-02 09:33:49,402 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_server_security_groups): 200 GET http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33 0.224s
+2017-10-02 09:33:49,402 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', u'content-length': '1612', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33', u'x-compute-request-id': 'req-f5d8ca2c-6847-4875-887a-4a4c8f4f485b', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:47 GMT', u'content-type': 'application/json'}
+        Body: {"server": {"status": "ACTIVE", "updated": "2017-10-02T01:33:47Z", "hostId": "024d43cbef485b8b75acf6b7d1a2a9c9e121d1f329b560f1fb286489", "addresses": {"tempest-SecurityGroupsTestJSON-1362206181-network": [{"OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:35:1e:91", "version": 4, "addr": "10.100.0.3", "OS-EXT-IPS:type": "fixed"}]}, "links": [{"href": "http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33", "rel": "self"}, {"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33", "rel": "bookmark"}], "key_name": null, "image": {"id": "6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/images/6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "rel": "bookmark"}]}, "OS-EXT-STS:task_state": null, "OS-EXT-STS:vm_state": "active", "OS-SRV-USG:launched_at": "2017-10-02T01:33:47.000000", "flavor": {"id": "1", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/flavors/1", "rel": "bookmark"}]}, "id": "24c9db4d-7220-4ffb-bfa8-759c05abde33", "security_groups": [{"name": "default"}], "OS-SRV-USG:terminated_at": null, "OS-EXT-AZ:availability_zone": "nova", "user_id": "23cec89672b64d36bf6a91109e8eb303", "name": "tempest-SecurityGroupsTestJSON-server-2093930180", "created": "2017-10-02T01:33:35Z", "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "OS-DCF:diskConfig": "MANUAL", "os-extended-volumes:volumes_attached": [], "accessIPv4": "", "accessIPv6": "", "progress": 0, "OS-EXT-STS:power_state": 1, "config_drive": "", "metadata": {}}}
+2017-10-02 09:33:49,414 15180 INFO     [tempest.common.waiters] State transition "BUILD/spawning" ==> "ACTIVE/None" after 11 second wait
+2017-10-02 09:33:49,834 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_server_security_groups): 202 POST http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33/action 0.418s
+2017-10-02 09:33:49,835 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"addSecurityGroup": {"name": "tempest-SecurityGroupsTestJSON-securitygroup-445357879"}}
+    Response - Headers: {'status': '202', u'content-length': '0', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33/action', u'x-compute-request-id': 'req-022bf46b-c8ed-403c-8b7c-7fa77e930611', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:48 GMT', u'content-type': 'application/json'}
+        Body: 
+2017-10-02 09:33:49,898 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_server_security_groups): 400 DELETE http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups/cddb04eb-3915-49fb-bd31-cae3ced91698 0.061s
+2017-10-02 09:33:49,899 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '400', u'content-length': '185', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups/cddb04eb-3915-49fb-bd31-cae3ced91698', u'x-compute-request-id': 'req-af281949-1828-4659-874e-6ba1d2415f1c', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:48 GMT', u'content-type': 'application/json; charset=UTF-8'}
+        Body: {"badRequest": {"message": "Security Group cddb04eb-3915-49fb-bd31-cae3ced91698 in use.\nNeutron server returns request_ids: ['req-b4073ea5-40c7-4297-b916-6ddb565ea6ed']", "code": 400}}
+2017-10-02 09:33:50,050 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_server_security_groups): 202 POST http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33/action 0.150s
+2017-10-02 09:33:50,050 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"reboot": {"type": "HARD"}}
+    Response - Headers: {'status': '202', u'content-length': '0', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33/action', u'x-compute-request-id': 'req-01b39daa-0d45-4160-a947-4745a47023b3', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:48 GMT', u'content-type': 'application/json'}
+        Body: 
+2017-10-02 09:33:51,261 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_server_security_groups): 200 GET http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33 0.208s
+2017-10-02 09:33:51,261 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', u'content-length': '1687', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33', u'x-compute-request-id': 'req-1deece52-299f-4ee5-9f24-32c93c8bed13', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:49 GMT', u'content-type': 'application/json'}
+        Body: {"server": {"status": "HARD_REBOOT", "updated": "2017-10-02T01:33:48Z", "hostId": "024d43cbef485b8b75acf6b7d1a2a9c9e121d1f329b560f1fb286489", "addresses": {"tempest-SecurityGroupsTestJSON-1362206181-network": [{"OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:35:1e:91", "version": 4, "addr": "10.100.0.3", "OS-EXT-IPS:type": "fixed"}]}, "links": [{"href": "http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33", "rel": "self"}, {"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33", "rel": "bookmark"}], "key_name": null, "image": {"id": "6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/images/6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "rel": "bookmark"}]}, "OS-EXT-STS:task_state": "reboot_started_hard", "OS-EXT-STS:vm_state": "active", "OS-SRV-USG:launched_at": "2017-10-02T01:33:47.000000", "flavor": {"id": "1", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/flavors/1", "rel": "bookmark"}]}, "id": "24c9db4d-7220-4ffb-bfa8-759c05abde33", "security_groups": [{"name": "tempest-SecurityGroupsTestJSON-securitygroup-445357879"}, {"name": "default"}], "OS-SRV-USG:terminated_at": null, "OS-EXT-AZ:availability_zone": "nova", "user_id": "23cec89672b64d36bf6a91109e8eb303", "name": "tempest-SecurityGroupsTestJSON-server-2093930180", "created": "2017-10-02T01:33:35Z", "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "OS-DCF:diskConfig": "MANUAL", "os-extended-volumes:volumes_attached": [], "accessIPv4": "", "accessIPv6": "", "OS-EXT-STS:power_state": 1, "config_drive": "", "metadata": {}}}
+2017-10-02 09:33:52,480 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_server_security_groups): 200 GET http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33 0.205s
+2017-10-02 09:33:52,481 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', u'content-length': '1680', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33', u'x-compute-request-id': 'req-cd695886-e72c-4f20-bd69-b4c589d67d7f', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:50 GMT', u'content-type': 'application/json'}
+        Body: {"server": {"status": "ACTIVE", "updated": "2017-10-02T01:33:49Z", "hostId": "024d43cbef485b8b75acf6b7d1a2a9c9e121d1f329b560f1fb286489", "addresses": {"tempest-SecurityGroupsTestJSON-1362206181-network": [{"OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:35:1e:91", "version": 4, "addr": "10.100.0.3", "OS-EXT-IPS:type": "fixed"}]}, "links": [{"href": "http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33", "rel": "self"}, {"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33", "rel": "bookmark"}], "key_name": null, "image": {"id": "6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/images/6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "rel": "bookmark"}]}, "OS-EXT-STS:task_state": null, "OS-EXT-STS:vm_state": "active", "OS-SRV-USG:launched_at": "2017-10-02T01:33:47.000000", "flavor": {"id": "1", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/flavors/1", "rel": "bookmark"}]}, "id": "24c9db4d-7220-4ffb-bfa8-759c05abde33", "security_groups": [{"name": "tempest-SecurityGroupsTestJSON-securitygroup-445357879"}, {"name": "default"}], "OS-SRV-USG:terminated_at": null, "OS-EXT-AZ:availability_zone": "nova", "user_id": "23cec89672b64d36bf6a91109e8eb303", "name": "tempest-SecurityGroupsTestJSON-server-2093930180", "created": "2017-10-02T01:33:35Z", "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "OS-DCF:diskConfig": "MANUAL", "os-extended-volumes:volumes_attached": [], "accessIPv4": "", "accessIPv6": "", "progress": 0, "OS-EXT-STS:power_state": 1, "config_drive": "", "metadata": {}}}
+2017-10-02 09:33:52,492 15180 INFO     [tempest.common.waiters] State transition "HARD_REBOOT/reboot_started_hard" ==> "ACTIVE/None" after 1 second wait
+2017-10-02 09:33:52,827 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_server_security_groups): 202 POST http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33/action 0.334s
+2017-10-02 09:33:52,828 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"addSecurityGroup": {"name": "tempest-SecurityGroupsTestJSON-securitygroup-992774273"}}
+    Response - Headers: {'status': '202', u'content-length': '0', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33/action', u'x-compute-request-id': 'req-439fba28-ab7b-4912-98c2-0ba9f0aec081', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:51 GMT', u'content-type': 'application/json'}
+        Body: 
+2017-10-02 09:33:52,888 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_server_security_groups): 400 DELETE http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups/c5b02ed0-d28e-4f68-9afa-92791fd476ab 0.059s
+2017-10-02 09:33:52,889 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '400', u'content-length': '185', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups/c5b02ed0-d28e-4f68-9afa-92791fd476ab', u'x-compute-request-id': 'req-9d081feb-580d-431c-8b17-a44c29d976ed', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:51 GMT', u'content-type': 'application/json; charset=UTF-8'}
+        Body: {"badRequest": {"message": "Security Group c5b02ed0-d28e-4f68-9afa-92791fd476ab in use.\nNeutron server returns request_ids: ['req-4729a7b8-440f-48ef-8209-dc1e53913ec3']", "code": 400}}
+2017-10-02 09:33:53,063 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_server_security_groups): 204 DELETE http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33 0.173s
+2017-10-02 09:33:53,063 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '204', u'content-length': '0', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33', u'x-compute-request-id': 'req-9ded21e6-117c-4bc6-a8f9-99bf686b049a', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:51 GMT', u'content-type': 'application/json'}
+        Body: 
+2017-10-02 09:33:53,266 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_server_security_groups): 200 GET http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33 0.201s
+2017-10-02 09:33:53,266 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', u'content-length': '1754', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33', u'x-compute-request-id': 'req-0e5ecf1e-8dd6-4105-a48d-bec79ff02544', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:51 GMT', u'content-type': 'application/json'}
+        Body: {"server": {"status": "ACTIVE", "updated": "2017-10-02T01:33:51Z", "hostId": "024d43cbef485b8b75acf6b7d1a2a9c9e121d1f329b560f1fb286489", "addresses": {"tempest-SecurityGroupsTestJSON-1362206181-network": [{"OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:35:1e:91", "version": 4, "addr": "10.100.0.3", "OS-EXT-IPS:type": "fixed"}]}, "links": [{"href": "http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33", "rel": "self"}, {"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33", "rel": "bookmark"}], "key_name": null, "image": {"id": "6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/images/6b7571bc-0886-4b1d-ae96-ef69d6ae5039", "rel": "bookmark"}]}, "OS-EXT-STS:task_state": "deleting", "OS-EXT-STS:vm_state": "active", "OS-SRV-USG:launched_at": "2017-10-02T01:33:47.000000", "flavor": {"id": "1", "links": [{"href": "http://10.0.2.201:8774/976c9bda155c46a38ecf80344f6a643d/flavors/1", "rel": "bookmark"}]}, "id": "24c9db4d-7220-4ffb-bfa8-759c05abde33", "security_groups": [{"name": "tempest-SecurityGroupsTestJSON-securitygroup-992774273"}, {"name": "tempest-SecurityGroupsTestJSON-securitygroup-445357879"}, {"name": "default"}], "OS-SRV-USG:terminated_at": null, "OS-EXT-AZ:availability_zone": "nova", "user_id": "23cec89672b64d36bf6a91109e8eb303", "name": "tempest-SecurityGroupsTestJSON-server-2093930180", "created": "2017-10-02T01:33:35Z", "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "OS-DCF:diskConfig": "MANUAL", "os-extended-volumes:volumes_attached": [], "accessIPv4": "", "accessIPv6": "", "progress": 0, "OS-EXT-STS:power_state": 1, "config_drive": "", "metadata": {}}}
+2017-10-02 09:33:54,360 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_server_security_groups): 404 GET http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33 0.079s
+2017-10-02 09:33:54,360 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '404', u'content-length': '111', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/servers/24c9db4d-7220-4ffb-bfa8-759c05abde33', u'x-compute-request-id': 'req-d913a892-d487-4567-b05e-2cd8a9651c98', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:52 GMT', u'content-type': 'application/json; charset=UTF-8'}
+        Body: {"itemNotFound": {"message": "Instance 24c9db4d-7220-4ffb-bfa8-759c05abde33 could not be found.", "code": 404}}
+2017-10-02 09:33:54,470 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_server_security_groups): 202 DELETE http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups/cddb04eb-3915-49fb-bd31-cae3ced91698 0.109s
+2017-10-02 09:33:54,471 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '202', u'content-length': '0', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups/cddb04eb-3915-49fb-bd31-cae3ced91698', u'x-compute-request-id': 'req-bb612f3c-677f-41ce-bce4-34fbc42bdb26', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:52 GMT', u'content-type': 'application/json'}
+        Body: 
+2017-10-02 09:33:54,587 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_server_security_groups): 202 DELETE http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups/c5b02ed0-d28e-4f68-9afa-92791fd476ab 0.116s
+2017-10-02 09:33:54,588 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '202', u'content-length': '0', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups/c5b02ed0-d28e-4f68-9afa-92791fd476ab', u'x-compute-request-id': 'req-6af6a5a1-ca13-40a0-8984-1e892aee97f5', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:52 GMT', u'content-type': 'application/json'}
+        Body: 
+0
+]
+tags: -worker-0
+time: 2017-10-02 01:33:54.590786Z
+tags: worker-0
+test: tempest.api.compute.security_groups.test_security_groups.SecurityGroupsTestJSON.test_update_security_groups[id-7d4e1d3c-3209-4d6d-b020-986304ebad1f]
+time: 2017-10-02 01:33:54.782915Z
+successful: tempest.api.compute.security_groups.test_security_groups.SecurityGroupsTestJSON.test_update_security_groups[id-7d4e1d3c-3209-4d6d-b020-986304ebad1f] [ multipart
+Content-Type: text/plain;charset=utf8
+pythonlogging:''
+EDA
+2017-10-02 09:33:54,644 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_update_security_groups): 200 POST http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups 0.052s
+2017-10-02 09:33:54,645 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"security_group": {"name": "tempest-SecurityGroupsTestJSON-securitygroup-1894411119", "description": "tempest-description-19319952"}}
+    Response - Headers: {'status': '200', u'content-length': '242', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups', u'x-compute-request-id': 'req-f77044e0-a2bc-408f-b7d5-8341220001d4', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:52 GMT', u'content-type': 'application/json'}
+        Body: {"security_group": {"rules": [], "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "id": "275cf3f0-e130-4b8d-997a-d616350b1821", "name": "tempest-SecurityGroupsTestJSON-securitygroup-1894411119", "description": "tempest-description-19319952"}}
+2017-10-02 09:33:54,721 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_update_security_groups): 200 PUT http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups/275cf3f0-e130-4b8d-997a-d616350b1821 0.071s
+2017-10-02 09:33:54,721 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: {"security_group": {"name": "tempest-sg-hth-1215280077", "description": "tempest-description-hth-1495456689"}}
+    Response - Headers: {'status': '200', u'content-length': '218', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups/275cf3f0-e130-4b8d-997a-d616350b1821', u'x-compute-request-id': 'req-921ace88-1b5c-4f21-bb97-01340566fb98', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:53 GMT', u'content-type': 'application/json'}
+        Body: {"security_group": {"rules": [], "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "id": "275cf3f0-e130-4b8d-997a-d616350b1821", "name": "tempest-sg-hth-1215280077", "description": "tempest-description-hth-1495456689"}}
+2017-10-02 09:33:54,777 15180 INFO     [tempest.lib.common.rest_client] Request (SecurityGroupsTestJSON:test_update_security_groups): 200 GET http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups/275cf3f0-e130-4b8d-997a-d616350b1821 0.051s
+2017-10-02 09:33:54,778 15180 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-OpenStack-Nova-API-Version': '2.1', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', u'content-length': '218', 'content-location': 'http://10.0.2.201:8774/v2.1/976c9bda155c46a38ecf80344f6a643d/os-security-groups/275cf3f0-e130-4b8d-997a-d616350b1821', u'x-compute-request-id': 'req-e5ccce62-93da-4ec0-8164-4b3889e73183', u'vary': 'X-OpenStack-Nova-API-Version', u'connection': 'close', u'x-openstack-nova-api-version': '2.1', u'date': 'Mon, 02 Oct 2017 01:33:53 GMT', u'content-type': 'application/json'}
+        Body: {"security_group": {"rules": [], "tenant_id": "976c9bda155c46a38ecf80344f6a643d", "id": "275cf3f0-e130-4b8d-997a-d616350b1821", "name": "tempest-sg-hth-1215280077", "description": "tempest-description-hth-1495456689"}}
+0
+]
+tags: -worker-0
